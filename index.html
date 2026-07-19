@@ -111,7 +111,7 @@ p{margin:0 0 14px;}
   background-image:url('assets/hero-watercolor.jpg');background-size:cover;background-position:top center;background-repeat:no-repeat;
 }
 .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(28px,5vw,60px);align-items:center;}
-@media (max-width:900px){.hero-grid{grid-template-columns:1fr;}}
+@media (max-width:900px){.hero-grid{grid-template-columns:1fr;}.hero-visual{order:-1;margin-bottom:12px;}}
 .hero h1{margin-bottom:18px;}
 .hero h1 em{font-style:normal;color:var(--coral);position:relative;white-space:nowrap;}
 .wave-text{display:inline-block;cursor:pointer;}
@@ -126,8 +126,8 @@ p{margin:0 0 14px;}
 
 .hero-visual{position:relative;}
 .hero-photo-frame{
-  border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-md);
-  border:6px solid #fff;aspect-ratio:4/5;max-width:340px;margin-inline-start:auto;position:relative;z-index:2;
+  border-radius:50%;overflow:hidden;box-shadow:var(--shadow-md);
+  border:6px solid #fff;aspect-ratio:1/1;max-width:320px;margin-inline-start:auto;position:relative;z-index:2;
 }
 .hero-photo-frame img{width:100%;height:100%;object-fit:cover;}
 .quote-float{
@@ -231,13 +231,18 @@ p{margin:0 0 14px;}
 .price-band .amount{flex:1 1 180px;min-width:0;font-family:'Heebo',sans-serif;font-size:clamp(24px,4vw,34px);font-weight:900;color:var(--peach);}
 .price-band .amount span{font-size:15px;color:rgba(255,255,255,.7);font-weight:500;display:block;margin-bottom:4px;}
 .price-band .btn{flex:1 1 200px;}
+.require-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:22px;}
+@media (max-width:700px){.require-grid{grid-template-columns:1fr;}}
+.require-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:20px 16px;text-align:center;box-shadow:var(--shadow-sm);}
+.require-card .ico{display:block;font-size:26px;margin-bottom:10px;}
+.require-card p{margin:0;font-size:14px;color:var(--ink-soft);font-weight:600;}
 
 /* practice 4 axes */
 .axis-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:30px;}
 @media (max-width:900px){.axis-grid{grid-template-columns:1fr 1fr;}}
 @media (max-width:520px){.axis-grid{grid-template-columns:1fr;}}
-.axis-card{background:#fff;border-radius:var(--radius);padding:22px 20px;box-shadow:var(--shadow-sm);border:1px solid var(--line);}
-.axis-num{font-family:'Heebo',sans-serif;font-weight:900;font-size:28px;color:var(--peach);-webkit-text-stroke:1.5px var(--coral);}
+.axis-card{background:#fff;border-radius:var(--radius);padding:44px 20px 24px;box-shadow:var(--shadow-sm);border:1px solid var(--line);position:relative;}
+.axis-num{position:absolute;top:16px;right:18px;font-family:'Heebo',sans-serif;font-weight:900;font-size:30px;color:var(--coral);}
 .axis-card h4{font-family:'Heebo',sans-serif;font-weight:800;font-size:16.5px;margin:8px 0 8px;}
 .axis-card p{font-size:15px;color:var(--ink-soft);margin:0;}
 
@@ -264,14 +269,14 @@ p{margin:0 0 14px;}
 .scroll-row::-webkit-scrollbar-thumb{background:var(--line);border-radius:10px;}
 .video-frame{position:relative;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-sm);border:1px solid var(--line);background:#000;padding-top:56.25%;}
 .video-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0;}
-.scroll-row > .video-frame{flex:0 0 300px;scroll-snap-align:start;}
-.video-testi{flex:0 0 300px;scroll-snap-align:start;}
-.video-testi-name{margin:10px 0 0;text-align:center;font-size:13.5px;color:var(--ink-soft);}
+.scroll-row > .video-frame{flex:0 0 220px;scroll-snap-align:start;}
+.video-testi{flex:0 0 220px;scroll-snap-align:start;}
+.video-testi-name{margin:8px 0 0;text-align:center;font-size:13px;color:var(--ink-soft);}
 .video-testi-name b{color:var(--coral-deep);}
-@media (max-width:560px){.scroll-row > .video-frame,.video-testi{flex:0 0 82vw;}}
+@media (max-width:560px){.scroll-row > .video-frame,.video-testi{flex:0 0 62vw;}}
 /* vertical testimonial marquee columns */
-.testi-columns{display:flex;justify-content:center;gap:20px;margin-top:16px;max-height:640px;overflow:hidden;-webkit-mask-image:linear-gradient(to bottom,transparent,#000 12%,#000 88%,transparent);mask-image:linear-gradient(to bottom,transparent,#000 12%,#000 88%,transparent);}
-.testi-col{flex:1 1 0;max-width:230px;overflow:hidden;}
+.testi-columns{display:flex;justify-content:center;gap:16px;margin-top:14px;max-height:380px;overflow:hidden;-webkit-mask-image:linear-gradient(to bottom,transparent,#000 12%,#000 88%,transparent);mask-image:linear-gradient(to bottom,transparent,#000 12%,#000 88%,transparent);}
+.testi-col{flex:1 1 0;max-width:170px;overflow:hidden;}
 .testi-col:nth-child(2),.testi-col:nth-child(3){display:none;}
 @media (min-width:640px){.testi-col:nth-child(2){display:block;}}
 @media (min-width:900px){.testi-col:nth-child(3){display:block;}}
@@ -285,7 +290,7 @@ p{margin:0 0 14px;}
 /* bio */
 .bio-wrap{display:grid;grid-template-columns:.75fr 1.25fr;gap:clamp(24px,5vw,50px);align-items:start;margin-top:20px;}
 @media (max-width:800px){.bio-wrap{grid-template-columns:1fr;}}
-.bio-photo{border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-md);aspect-ratio:4/5;border:6px solid #fff;max-width:320px;margin-inline:auto;}
+.bio-photo{border-radius:50%;overflow:hidden;box-shadow:var(--shadow-md);aspect-ratio:1/1;border:6px solid #fff;max-width:300px;margin-inline:auto;}
 .bio-photo img{width:100%;height:100%;object-fit:cover;}
 .bio-creds{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px;}
 .cred{background:var(--teal-tint);color:#0E5652;border-radius:100px;padding:7px 16px;font-size:13px;font-weight:600;}
@@ -338,7 +343,7 @@ footer .fine{font-size:13px;color:var(--ink-soft);margin-top:24px;}
     <div>
       <span class="eyebrow">הכשרת מטפלות עסקיות · מחזור 1</span>
       <h1 class="h1"><span class="wave-text" id="hero-wave">נמאס לך לעבוד קשה<br><em>בשביל כלום כסף לשעה?</em></span></h1>
-      <p class="lead">הכשרת מטפלות עסקיות בשיטת Inside Out - השיטה שמחברת עבודה רגשית-תודעתית עמוקה עם ליווי עסקי מעשי, כדי שתדעי לא רק ללוות נשים לשינוי אמיתי - אלא גם לחיות מהמקצוע בכבוד.</p>
+      <p class="lead"><strong>חיבור בין עולם פנימי לתוצאה עסקית.</strong> הכשרת מטפלות עסקיות בשיטת Inside Out - השיטה שמחברת עבודה רגשית-תודעתית עמוקה עם ליווי עסקי מעשי, כדי שתדעי לא רק ללוות נשים לשינוי אמיתי - אלא גם לחיות מהמקצוע בכבוד.</p>
       <div class="stat-bar">
         <div class="stat">
           <span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 21s7-6.1 7-11.5A7 7 0 0 0 5 9.5C5 14.9 12 21 12 21Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="12" cy="9.5" r="2.4" stroke="currentColor" stroke-width="1.8"/></svg></span>
@@ -372,16 +377,6 @@ footer .fine{font-size:13px;color:var(--ink-soft);margin-top:24px;}
   </div>
 </header>
 
-<!-- INTRO VIDEO -->
-<section class="reveal" style="padding-top:0;">
-  <div class="container-narrow">
-    <p style="text-align:center;font-family:'Heebo',sans-serif;font-weight:700;font-size:16.5px;margin-bottom:16px;">רגע לפני שממשיכות, סרטון קצר על ההכשרה:</p>
-    <div class="video-frame" style="max-width:560px;margin:0 auto;">
-      <iframe src="https://player.vimeo.com/video/1184530587" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe>
-    </div>
-  </div>
-</section>
-
 <!-- PAIN -->
 <section class="reveal">
   <div class="container-narrow">
@@ -393,11 +388,11 @@ footer .fine{font-size:13px;color:var(--ink-soft);margin-top:24px;}
     <div class="pain-audience">
       <div class="pain-card">
         <span class="tag">את מעולם הטיפול, האימון והתודעה</span>
-        <p>את עושה עבודה רגשית מדהימה עם אנשים, אבל הלב שלך קורא לך לעבוד עם נשים עצמאיות ובעלות עסקים. את רוצה ללוות נשים להגשמה, להפצת השליחות שלהן ולהגדלת ההכנסות. חסרה לך השפה העסקית המדויקת, המודלים והכלים הפרקטיים כדי לתרגם את העומק שלך לתוצאות עסקיות אמיתיות.</p>
+        <p>את עושה עבודה רגשית מדהימה עם אנשים, אבל הלב שלך קורא לך לעבוד עם נשים עצמאיות ובעלות עסקים - וחסרה לך השפה העסקית שתתרגם את העומק שלך לתוצאות אמיתיות.</p>
       </div>
       <div class="pain-card">
         <span class="tag">מעולם הליווי והייעוץ העסקי</span>
-        <p>את נותנת ללקוחות שלך את האסטרטגיות הכי טובות, אבל רואה אותן שוב ושוב נתקעות ולא מיישמות, בגלל פחדים ואמונות מגבילות. את רוצה כלים טיפוליים ותודעתיים עמוקים כדי לפרק את החסמים האלה מהשורש.</p>
+        <p>את נותנת ללקוחות שלך את האסטרטגיות הכי טובות, אבל רואה אותן נתקעות שוב ושוב - ורוצה כלים טיפוליים עמוקים לפרק את החסמים מהשורש.</p>
       </div>
     </div>
     <p style="font-family:'Heebo',sans-serif;font-weight:700;text-align:center;margin-top:36px;">והאמת? זה משפיע ישירות גם על העסק שלך כרגע:</p>
@@ -432,29 +427,13 @@ footer .fine{font-size:13px;color:var(--ink-soft);margin-top:24px;}
   </div>
 </section>
 
-<!-- פילוסופיה -->
-<section class="reveal">
+<!-- INTRO VIDEO -->
+<section class="reveal" style="padding-top:0;">
   <div class="container-narrow">
-    <div class="section-head">
-      <span class="eyebrow">התפיסה שלי</span>
-      <h2 class="h2">זו לא עוד הכשרה מקצועית</h2>
-      <p class="lead">זו דרך חדשה להסתכל על עולם העסקים הנשי ב-2027.</p>
+    <p style="text-align:center;font-family:'Heebo',sans-serif;font-weight:700;font-size:16.5px;margin-bottom:16px;">רגע לפני שממשיכות, סרטון קצר על ההכשרה:</p>
+    <div class="video-frame" style="max-width:560px;margin:0 auto;">
+      <iframe src="https://player.vimeo.com/video/1184530587" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe>
     </div>
-    <p>רוב ההכשרות מלמדות אותך איך לבנות עסק. אני רוצה ללמד אותך איך להבין את <strong>האישה שמאחורי העסק.</strong></p>
-    <p>במשך שנים ליוויתי מאות בעלות עסקים מכל התחומים, וגיליתי שוב ושוב את אותו הדבר:</p>
-    <div class="negation">
-      <span class="no">הבעיה כמעט אף פעם לא הייתה השיווק. לא המחירים. לא התוכן. לא המכירות.</span>
-      <span>הבעיה הייתה עמוקה יותר - פחד להצליח, פחד להיכשל, חוסר ערך, ביקורת עצמית, טראומות, אמונות מגבילות, מערכת עצבים בהישרדות.</span>
-    </div>
-    <p style="font-weight:700;">וכשזה השתנה - גם העסק השתנה.</p>
-    <p style="font-family:'Heebo',sans-serif;font-weight:800;font-size:clamp(18px,2.4vw,22px);color:var(--coral-deep);line-height:1.45;">העולם לא צריך עוד יועצות עסקיות. הוא צריך נשות מקצוע שיודעות לראות את מה שמאחורי הקלעים:</p>
-    <ul class="point-list">
-      <li><span class="num">1</span>לזהות את השורש שמאחורי החסם העסקי.</li>
-      <li><span class="num">2</span>להבין למה אישה יודעת בדיוק מה לעשות, אבל לא מצליחה לעשות את זה.</li>
-      <li><span class="num">3</span>להחזיק מרחב טיפולי עמוק, מבלי לאבד את החיבור למציאות העסקית.</li>
-      <li><span class="num">4</span>לחבר בין תהליך רגשי לבין צעדים מעשיים שמקדמים את העסק.</li>
-      <li><span class="num">5</span>להוביל נשים לשינוי שנשאר איתן גם הרבה אחרי שהמפגש מסתיים.</li>
-    </ul>
   </div>
 </section>
 
@@ -477,7 +456,19 @@ footer .fine{font-size:13px;color:var(--ink-soft);margin-top:24px;}
     <p>כי מבחינתי, אי אפשר להפריד ביניהם. זו לא הכשרה שתלמדי רק עם הראש - זו הכשרה שתעברי עם כל מי שאת.</p>
     <p>במשך כשבעה חודשים תחווי בעצמך את התהליך שאת עתידה להוביל: תלמדי, תתרגלי, תתנסי, תקבלי משוב, תלווי נשים, ותבני לעצמך דרך מקצועית המבוססת על השיטה. רק מתוך החוויה האישית הזו תוכלי להפוך למטפלת עסקית שמובילה שינוי אמיתי.</p>
     <p style="font-weight:700;">בסיום ההכשרה לא תצאי רק עם ידע - תצאי עם שפה מקצועית, מתודולוגיה ברורה, ניסיון מעשי, כלים טיפוליים ועסקיים, והיכולת להוביל נשים מבפנים החוצה.</p>
-    <div class="infographic-wrap"><img src="assets/inside-out-steps.jpg" alt="5 השלבים לעסק מצליח בשיטת Inside Out"></div>
+    <div class="infographic-wrap"><img src="assets/inside-out-steps.jpg" alt="חמשת השלבים לעסק נשי, מצליח ורווחי"></div>
+  </div>
+</section>
+
+<!-- CTA אמצע דף -->
+<section class="reveal">
+  <div class="container-narrow">
+    <div class="final-cta">
+      <h2 class="h2">בואי לסלול לעצמך דרך חדשה - מבפנים החוצה</h2>
+      <p class="lead" style="margin-bottom:26px;">נשמח להכיר אותך. ההרשמה כרוכה בראיון קבלה קצר.</p>
+      <a class="btn btn-outline" href="https://wa.me/message/7DOKCXRTBY4UG1" target="_blank" rel="noopener">להרשמה ולתיאום ראיון קבלה</a>
+      <p style="margin-top:26px;color:rgba(255,255,255,.85);">מחכה לך בהתרגשות,<br><strong style="color:#fff;">שרה שרבאני</strong></p>
+    </div>
   </div>
 </section>
 
@@ -505,6 +496,67 @@ footer .fine{font-size:13px;color:var(--ink-soft);margin-top:24px;}
       </div>
     </div>
     <p style="text-align:center;margin-top:24px;font-family:'Heebo',sans-serif;font-weight:800;font-size:clamp(18px,2.4vw,22px);color:var(--coral-deep);">רק אחר כך יוצאות החוצה לעולם.</p>
+  </div>
+</section>
+
+<!-- פילוסופיה -->
+<section class="reveal">
+  <div class="container-narrow">
+    <div class="section-head">
+      <span class="eyebrow">התפיסה שלי</span>
+      <h2 class="h2">זו לא עוד הכשרה מקצועית</h2>
+      <p class="lead">זו דרך חדשה להסתכל על עולם העסקים הנשי ב-2027.</p>
+    </div>
+    <p>רוב ההכשרות מלמדות אותך איך לבנות עסק. אני רוצה ללמד אותך איך להבין את <strong>האישה שמאחורי העסק.</strong></p>
+    <p>במשך שנים ליוויתי מאות בעלות עסקים מכל התחומים, וגיליתי שוב ושוב את אותו הדבר:</p>
+    <div class="negation">
+      <span class="no">הבעיה כמעט אף פעם לא הייתה השיווק. לא המחירים. לא התוכן. לא המכירות.</span>
+      <span>הבעיה הייתה עמוקה יותר - פחד להצליח, פחד להיכשל, חוסר ערך, ביקורת עצמית, טראומות, אמונות מגבילות, מערכת עצבים בהישרדות.</span>
+    </div>
+    <p style="font-weight:700;">וכשזה השתנה - גם העסק השתנה.</p>
+    <p style="font-family:'Heebo',sans-serif;font-weight:800;font-size:clamp(18px,2.4vw,22px);color:var(--coral-deep);line-height:1.45;">העולם לא צריך עוד יועצות עסקיות. הוא צריך נשות מקצוע שיודעות לראות את מה שמאחורי הקלעים:</p>
+    <ul class="point-list">
+      <li><span class="num">1</span>לזהות את השורש שמאחורי החסם העסקי.</li>
+      <li><span class="num">2</span>להבין למה אישה יודעת בדיוק מה לעשות, אבל לא מצליחה לעשות את זה.</li>
+      <li><span class="num">3</span>להחזיק מרחב טיפולי עמוק, מבלי לאבד את החיבור למציאות העסקית.</li>
+      <li><span class="num">4</span>לחבר בין תהליך רגשי לבין צעדים מעשיים שמקדמים את העסק.</li>
+      <li><span class="num">5</span>להוביל נשים לשינוי שנשאר איתן גם הרבה אחרי שהמפגש מסתיים.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- שיטת הלמידה -->
+<section class="reveal">
+  <div class="container-narrow">
+    <div class="section-head">
+      <span class="eyebrow teal">סמכות מקצועית</span>
+      <h2 class="h2">שיטת הלמידה בהכשרה</h2>
+      <p class="lead">חסם עסקי הוא כמעט תמיד אנרגיה תקועה - פחד, אמונה מגבילה, סיפור ישן שעדיין מנהל אותך מבפנים. אי אפשר לפרק אותו רק עם עוד תבנית שיווקית. לכן כל הקורס בנוי משני חלקים המשלימים זה את זה, כי לא ניתן להוביל אחרות למקום שעדיין לא עברנו בעצמנו.</p>
+    </div>
+    <div class="io-grid">
+      <div class="io-card">
+        <div class="io-tag">Inside</div>
+        <div class="io-sub">חלק ראשון</div>
+        <p>תעברי בעצמך את התהליך ותכירי לעומק את שיטת Inside Out.</p>
+        <ul>
+          <li>תעמיקי בהיכרות עם הזהות, הערכים והשליחות האישית של הלקוחה שלך</li>
+          <li>תלמדי לעבוד עם טראומות, פחדים, אמונות מגבילות ודפוסים שמנהלים אותנו</li>
+          <li>תחווי כלים טיפוליים מעולם התודעה, הוויסות הרגשי, המדיטציה והגוף</li>
+          <li>תעברי תהליך אישי שיחזק את הביטחון, הנוכחות והיכולת שלך להוביל אחרות</li>
+        </ul>
+      </div>
+      <div class="io-card out">
+        <div class="io-tag">Out</div>
+        <div class="io-sub">חלק שני</div>
+        <p>נתרגם את העבודה הפנימית לעולם העסקי, כך שתדעי ללוות נשים גם ברמה המקצועית.</p>
+        <ul>
+          <li>תלמדי לבנות תהליך ליווי עסקי שלם המבוסס על שיטת Inside Out</li>
+          <li>תפתחי יכולת לאבחן את מקור החסמים ולהתאים תהליך עסקי-שיווקי מדויק</li>
+          <li>נעמיק בשיווק, תמחור, מכירות, מיתוג ובניית תוכניות ליווי</li>
+          <li>תקבלי כלים מעשיים לבניית עסק יציב, המבוסס על מי שאת - לא על תבניות זרות</li>
+        </ul>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -540,41 +592,6 @@ footer .fine{font-size:13px;color:var(--ink-soft);margin-top:24px;}
       <div class="story-photo"><img src="https://images.ravpages.co.il/xsite_resources/user_content/cp_new_production/00/54/e2/f5/0054e2f54c640fd0017d351bb30ad592/images/3710ba8aaeac1a5440b664b39d033031.jpg?rxc=1705555703" loading="lazy" alt="שרה שרבאני"></div>
       <div class="story-photo"><img src="https://images.ravpages.co.il/xsite_resources/user_content/cp_new_production/00/54/e2/f5/0054e2f54c640fd0017d351bb30ad592/images/ba7435dc651f7c5e8ab727d0d3ee5b4f.jpg?rxc=1705555703" loading="lazy" alt="שרה שרבאני"></div>
       <div class="story-photo"><img src="https://images.ravpages.co.il/xsite_resources/user_content/cp_new_production/00/54/e2/f5/0054e2f54c640fd0017d351bb30ad592/images/5326093868caa2281efc9a068fba80eb.jpg?rxc=1705555703" loading="lazy" alt="שרה שרבאני"></div>
-    </div>
-  </div>
-</section>
-
-<!-- שיטת הלמידה -->
-<section class="reveal">
-  <div class="container-narrow">
-    <div class="section-head">
-      <span class="eyebrow teal">סמכות מקצועית</span>
-      <h2 class="h2">שיטת הלמידה בהכשרה</h2>
-      <p class="lead">חסם עסקי הוא כמעט תמיד אנרגיה תקועה - פחד, אמונה מגבילה, סיפור ישן שעדיין מנהל אותך מבפנים. אי אפשר לפרק אותו רק עם עוד תבנית שיווקית. לכן כל הקורס בנוי משני חלקים המשלימים זה את זה, כי לא ניתן להוביל אחרות למקום שעדיין לא עברנו בעצמנו.</p>
-    </div>
-    <div class="io-grid">
-      <div class="io-card">
-        <div class="io-tag">Inside</div>
-        <div class="io-sub">חלק ראשון</div>
-        <p>תעברי בעצמך את התהליך ותכירי לעומק את שיטת Inside Out.</p>
-        <ul>
-          <li>תעמיקי בהיכרות עם הזהות, הערכים והשליחות האישית של הלקוחה שלך</li>
-          <li>תלמדי לעבוד עם טראומות, פחדים, אמונות מגבילות ודפוסים שמנהלים אותנו</li>
-          <li>תחווי כלים טיפוליים מעולם התודעה, הוויסות הרגשי, המדיטציה והגוף</li>
-          <li>תעברי תהליך אישי שיחזק את הביטחון, הנוכחות והיכולת שלך להוביל אחרות</li>
-        </ul>
-      </div>
-      <div class="io-card out">
-        <div class="io-tag">Out</div>
-        <div class="io-sub">חלק שני</div>
-        <p>נתרגם את העבודה הפנימית לעולם העסקי, כך שתדעי ללוות נשים גם ברמה המקצועית.</p>
-        <ul>
-          <li>תלמדי לבנות תהליך ליווי עסקי שלם המבוסס על שיטת Inside Out</li>
-          <li>תפתחי יכולת לאבחן את מקור החסמים ולהתאים תהליך עסקי-שיווקי מדויק</li>
-          <li>נעמיק בשיווק, תמחור, מכירות, מיתוג ובניית תוכניות ליווי</li>
-          <li>תקבלי כלים מעשיים לבניית עסק יציב, המבוסס על מי שאת - לא על תבניות זרות</li>
-        </ul>
-      </div>
     </div>
   </div>
 </section>
@@ -684,10 +701,15 @@ footer .fine{font-size:13px;color:var(--ink-soft);margin-top:24px;}
       <div class="detail-card"><div class="label">משך ההכשרה</div><div class="value">7 חודשים</div></div>
     </div>
     <div class="price-band">
-      <div class="amount"><span>ההשקעה שלך</span>18,400 ₪</div>
+      <div class="amount"><span>מחיר הרשמה מוקדמת עד 15.9</span>17,400 ₪<span style="display:block;margin-top:6px;font-size:12.5px;color:rgba(255,255,255,.55);font-weight:400;text-decoration:line-through;">לאחר מכן: 18,400 ₪</span></div>
       <a class="btn btn-wa" href="https://wa.me/message/7DOKCXRTBY4UG1" target="_blank" rel="noopener">לתיאום ראיון קבלה</a>
     </div>
-    <p style="text-align:center;margin-top:22px;font-size:15px;color:var(--ink-soft);">דרישות ההסמכה: הנחיית סדנת זום בכנס בוגרות ההכשרה, הנחיית מעגל נשים בריטריט, וליווי 3-4 מתאמנות בתשלום סמלי לצבירת ניסיון.</p>
+
+    <div class="require-grid">
+      <div class="require-card"><span class="ico">🎤</span><p>הנחיית סדנת זום בכנס בוגרות ההכשרה</p></div>
+      <div class="require-card"><span class="ico">🤝</span><p>הנחיית מעגל נשים בריטריט</p></div>
+      <div class="require-card"><span class="ico">💫</span><p>ליווי 3-4 מתאמנות בתשלום סמלי לצבירת ניסיון</p></div>
+    </div>
   </div>
 </section>
 
@@ -715,7 +737,7 @@ footer .fine{font-size:13px;color:var(--ink-soft);margin-top:24px;}
     <div class="axis-grid">
       <div class="axis-card"><div class="axis-num">01</div><h4>אני מול עצמי</h4><p>המסע הפנימי שלך - זהות, ערך עצמי, פחדים ואמונות שמעצבים את הדרך שבה את רואה את עצמך ואת העסק.</p></div>
       <div class="axis-card"><div class="axis-num">02</div><h4>אני מול העסק</h4><p>תרגום התהליך הפנימי לשפה עסקית - תשתית, מיתוג, תמחור ותוכניות ליווי שנובעים מתוך מי שאת.</p></div>
-      <div class="axis-card"><div class="axis-num">03</div><h4>אני מול המתאמנת</h4><p>פיתוח היכולת ללוות אחרת - איך מאבחנים, איך מחזיקים מרחב טיפולי, ואיך מובילים לשינוי אמיתי.</p></div>
+      <div class="axis-card"><div class="axis-num">03</div><h4>אני מול הלקוחה</h4><p>פיתוח היכולת ללוות אחרת - איך מאבחנים, איך מחזיקים מרחב טיפולי, ואיך מובילים לשינוי אמיתי.</p></div>
       <div class="axis-card"><div class="axis-num">04</div><h4>אני מול העולם</h4><p>יציאה החוצה עם השיטה - שיווק, נראות, בניית קהל וקהילה, וההופעה המקצועית שלך בעולם.</p></div>
     </div>
   </div>
@@ -750,8 +772,8 @@ footer .fine{font-size:13px;color:var(--ink-soft);margin-top:24px;}
 <section class="alt reveal">
   <div class="container-narrow">
     <div class="section-head center">
-      <h2 class="h2">ולא נשארת לבד אחרי שהמפגש נגמר</h2>
-      <p class="lead">מעבר לכיתה, יש לך איתי כל הדרך: מרחב לשאול, תיק כלים אישי, סטאז' מלווה, וקהילה שתישאר גם אחרי שהתעודה כבר תלויה על הקיר.</p>
+      <h2 class="h2">ואת לא נשארת לבד בין המפגשים</h2>
+      <p class="lead">מעבר לכיתה, יש לך איתי לאורך כל הדרך: אותי ואת צוות ההכשרה, מרחב לשאול, תיק כלים אישי, סטאז' מלווה, וקהילה שתישאר גם אחרי שהתעודה כבר תלויה על הקיר.</p>
     </div>
     <div class="support-grid">
       <div class="support-card"><span class="ico">💬</span><h4>קבוצת ליווי בוואטסאפ</h4><p>מרחב חי לאורך כל ההכשרה - שאלות, שיתופים, תרגולים ועדכונים, גם באמצע השבוע.</p></div>
@@ -765,7 +787,7 @@ footer .fine{font-size:13px;color:var(--ink-soft);margin-top:24px;}
 </section>
 
 <!-- וידאו עדויות -->
-<section class="reveal">
+<section class="reveal" style="padding-top:clamp(36px,5vw,56px);padding-bottom:clamp(36px,5vw,56px);">
   <div class="container">
     <div class="section-head center">
       <span class="eyebrow">עדויות</span>
@@ -899,7 +921,7 @@ footer .fine{font-size:13px;color:var(--ink-soft);margin-top:24px;}
     </details>
     <details class="faq">
       <summary>מה עלות ההכשרה ואילו אפשרויות תשלום יש?<span class="plus">+</span></summary>
-      <div class="faq-body">ההשקעה בהכשרה היא 18,400 ₪, וניתן לחלק אותה לאפשרויות תשלום נוחות. ההרשמה מותנית בראיון קבלה אישי והתאמה הדדית, כדי לשמור על קבוצה איכותית, מחויבת ועמוקה. פרטי התשלום המדויקים נמסרים באופן אישי במהלך הראיון - לתיאום, כתבי לנו בוואטסאפ המשרד.</div>
+      <div class="faq-body">ההשקעה בהכשרה היא 18,400 ₪, ובהרשמה מוקדמת עד ה-15.9 - 17,400 ₪. ניתן לחלק את הסכום לאפשרויות תשלום נוחות. ההרשמה מותנית בראיון קבלה אישי והתאמה הדדית, כדי לשמור על קבוצה איכותית, מחויבת ועמוקה. פרטי התשלום המדויקים נמסרים באופן אישי במהלך הראיון - לתיאום, כתבי לנו בוואטסאפ המשרד.</div>
     </details>
   </div>
 </section>
