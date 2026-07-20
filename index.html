@@ -111,7 +111,8 @@ p{margin:0 0 14px;}
   background-image:url('assets/hero-watercolor.jpg');background-size:cover;background-position:top center;background-repeat:no-repeat;
 }
 .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(28px,5vw,60px);align-items:center;}
-@media (max-width:900px){.hero-grid{grid-template-columns:1fr;}.hero-visual{order:-1;margin-bottom:12px;}}
+.hero-eyebrow-row{grid-column:1/-1;}
+@media (max-width:900px){.hero-grid{grid-template-columns:1fr;}.hero-eyebrow-row{grid-row:1;}.hero-visual{grid-row:2;margin-bottom:12px;}.hero-text{grid-row:3;}}
 .hero h1{margin-bottom:18px;}
 .hero h1 em{font-style:normal;color:var(--coral);position:relative;white-space:nowrap;}
 .wave-text{display:inline-block;cursor:pointer;}
@@ -348,10 +349,10 @@ footer .fine{font-size:13px;color:var(--ink-soft);margin-top:24px;}
 <!-- HERO -->
 <header id="top" class="hero">
   <div class="hero-grid container">
-    <div style="grid-column:1/-1;order:-2;">
+    <div class="hero-eyebrow-row">
       <span class="eyebrow">הכשרת מטפלות עסקיות · מחזור 1</span>
     </div>
-    <div>
+    <div class="hero-text">
       <h1 class="h1"><span class="wave-text" id="hero-wave">נמאס לך לעבוד קשה<br><em>בשביל כלום כסף לשעה?</em></span></h1>
       <p class="lead"><strong>חיבור בין עולם פנימי לתוצאה עסקית.</strong> הכשרת מטפלות עסקיות בשיטת Inside Out - השיטה שמחברת עבודה רגשית-תודעתית עמוקה עם ליווי עסקי מעשי, כדי שתדעי לא רק ללוות נשים לשינוי אמיתי - אלא גם לחיות מהמקצוע בכבוד.</p>
       <div class="stat-bar">
