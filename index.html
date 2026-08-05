@@ -323,6 +323,11 @@ p{margin:0 0 14px;}
 .final-cta p{color:rgba(255,255,255,.9);}
 .final-cta .btn-outline{background:#fff;color:var(--coral-deep);border:none;}
 .final-cta::after{content:"";position:absolute;width:320px;height:320px;background:rgba(255,255,255,.08);border-radius:50%;top:-140px;left:-100px;}
+/* גרסה מקוצרת ל-CTA שבאמצע הדף, כדי שלא ייקרא כסוף העמוד */
+.final-cta.mid{padding:clamp(22px,3.4vw,32px) clamp(20px,5vw,44px);}
+.final-cta.mid .h2{font-size:clamp(20px,2.6vw,27px);}
+.final-cta.mid .lead{font-size:clamp(15px,1.5vw,16.5px);margin-top:8px;}
+.final-cta.mid::after{width:190px;height:190px;top:-105px;left:-70px;}
 
 /* footer */
 footer{padding:44px 0 100px;text-align:center;}
@@ -503,11 +508,10 @@ footer .fine{font-size:13px;color:var(--ink-soft);margin-top:24px;}
 <!-- CTA אמצע דף -->
 <section class="reveal">
   <div class="container-narrow">
-    <div class="final-cta">
+    <div class="final-cta mid">
       <h2 class="h2">בואי לסלול לעצמך דרך חדשה - מבפנים החוצה</h2>
-      <p class="lead" style="margin-bottom:26px;">נשמח להכיר אותך. ההרשמה כרוכה בראיון קבלה קצר.</p>
+      <p class="lead" style="margin-bottom:18px;">נשמח להכיר אותך. ההרשמה כרוכה בראיון קבלה קצר.</p>
       <a class="btn btn-outline" href="https://wa.me/message/7DOKCXRTBY4UG1" target="_blank" rel="noopener">להרשמה ולתיאום ראיון קבלה</a>
-      <p style="margin-top:26px;color:rgba(255,255,255,.85);">מחכה לך בהתרגשות,<br><strong style="color:#fff;">שרה שרבאני</strong></p>
     </div>
   </div>
 </section>
