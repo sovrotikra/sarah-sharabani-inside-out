@@ -1,5 +1,5 @@
 {
   "sections": "body > section, body > header.hero, body > footer",
-  "deny": ".sticky-cta, .sticky-cta *, .nav, .nav *, .quote-mark, .video-frame iframe",
+  "deny": ".sticky-cta, .sticky-cta *, .nav, .nav *, .quote-mark, .video-frame iframe, .scroll-nav, .scroll-nav *",
   "lock": ".wave-text, .wave-text *, .scroll-row, .scroll-row *, .testi-track, .testi-track *"
 }
