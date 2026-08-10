@@ -79,31 +79,12 @@ body::before{
 .btn-primary:hover{transform:translateY(-2px);box-shadow:0 14px 32px rgba(194,44,92,.4);}
 .final-cta .btn-primary{background:#fff;color:var(--coral-deep);box-shadow:0 10px 26px rgba(0,0,0,.16);}
 .apply-card{background:#fff;border-radius:var(--radius-lg);padding:clamp(18px,4vw,28px);text-align:start;position:relative;z-index:1;box-shadow:0 14px 36px rgba(0,0,0,.16);}
-/* עיצוב טופס רב מסר - הקוד שלהם מגיע ללא CSS, הסטיילינג נעשה כאן */
-.apply-card .submitButtonContainer_wrapper.ravxx_hover{display:none!important;}
-.apply-card .multyfields,.apply-card .inner_multyfields,.apply-card .multyinner,.apply-card .field,.apply-card div[class*="uniqueid_"]{width:100%!important;height:auto!important;}
-.apply-card div[class*="uniqueid_"]{margin-bottom:12px;}
-.apply-card input[type=text],.apply-card input[type=email],.apply-card input[type=tel],.apply-card select,.apply-card textarea{
-  width:100%!important;height:52px!important;
-  border:1.5px solid var(--line)!important;border-radius:14px!important;
-  padding:0 16px!important;background:#fff!important;color:var(--ink)!important;
-  font-family:'Assistant',sans-serif!important;font-size:16px!important;
-  direction:rtl;text-align:right;outline:none;box-shadow:none!important;
-  transition:border-color .2s ease;
-}
-.apply-card input:focus{border-color:var(--coral)!important;}
-.apply-card input::placeholder{color:var(--ink-soft);opacity:1;}
-.apply-card .submitbuttonbox,.apply-card .submitButtonContainer_wrapper,.apply-card a.submitButton{width:100%!important;height:auto!important;display:block!important;text-decoration:none!important;}
-.apply-card .submitbuttonbox{margin-top:6px;}
-.apply-card button.submitButton{
-  width:100%!important;height:auto!important;min-height:56px;
-  background:linear-gradient(135deg,var(--coral) 0%,var(--coral-deep) 100%)!important;
-  color:#fff!important;border:none!important;border-radius:999px!important;
-  font-family:'Heebo',sans-serif!important;font-weight:800!important;font-size:17px!important;
-  cursor:pointer;box-shadow:0 10px 26px rgba(194,44,92,.3);
-  transition:transform .2s ease,box-shadow .2s ease;
-}
-.apply-card button.submitButton:hover{transform:translateY(-2px);box-shadow:0 14px 32px rgba(194,44,92,.42);}
+/* טופס רב מסר: העיצוב נקבע בעורך הטפסים שלהם (הם משתמשים בסלקטורים בעלי
+   ספציפיות גבוהה מאוד שגוברים על CSS מקומי). כאן רק רשת ביטחון למקרה
+   שה-CSS שלהם לא נטען - הסתרת כפתור ה-hover הכפול ומניעת גלישה. */
+.apply-card .submitButtonContainer_wrapper.ravxx_hover{display:none;}
+.apply-card input,.apply-card select,.apply-card textarea{max-width:100%;}
+.apply-card img{max-width:100%;height:auto;}
 .apply-note{margin-top:16px;font-size:13.5px;line-height:1.65;color:rgba(255,255,255,.82);position:relative;z-index:1;}
 .btn svg{flex:none;}
 
