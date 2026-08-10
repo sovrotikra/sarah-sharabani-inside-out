@@ -75,6 +75,36 @@ body::before{
 .btn-wa:hover{transform:translateY(-2px);box-shadow:0 14px 32px rgba(37,211,102,.4);}
 .btn-outline{background:transparent;color:var(--ink);border:1.5px solid var(--line);padding:14px 26px;}
 .btn-outline:hover{border-color:var(--ink);}
+.btn-primary{background:linear-gradient(135deg,var(--coral) 0%,var(--coral-deep) 100%);color:#fff;box-shadow:0 10px 26px rgba(194,44,92,.3);}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 14px 32px rgba(194,44,92,.4);}
+.final-cta .btn-primary{background:#fff;color:var(--coral-deep);box-shadow:0 10px 26px rgba(0,0,0,.16);}
+.apply-card{background:#fff;border-radius:var(--radius-lg);padding:clamp(18px,4vw,28px);text-align:start;position:relative;z-index:1;box-shadow:0 14px 36px rgba(0,0,0,.16);}
+/* עיצוב טופס רב מסר - הקוד שלהם מגיע ללא CSS, הסטיילינג נעשה כאן */
+.apply-card .submitButtonContainer_wrapper.ravxx_hover{display:none!important;}
+.apply-card .multyfields,.apply-card .inner_multyfields,.apply-card .multyinner,.apply-card .field,.apply-card div[class*="uniqueid_"]{width:100%!important;height:auto!important;}
+.apply-card div[class*="uniqueid_"]{margin-bottom:12px;}
+.apply-card input[type=text],.apply-card input[type=email],.apply-card input[type=tel],.apply-card select,.apply-card textarea{
+  width:100%!important;height:52px!important;
+  border:1.5px solid var(--line)!important;border-radius:14px!important;
+  padding:0 16px!important;background:#fff!important;color:var(--ink)!important;
+  font-family:'Assistant',sans-serif!important;font-size:16px!important;
+  direction:rtl;text-align:right;outline:none;box-shadow:none!important;
+  transition:border-color .2s ease;
+}
+.apply-card input:focus{border-color:var(--coral)!important;}
+.apply-card input::placeholder{color:var(--ink-soft);opacity:1;}
+.apply-card .submitbuttonbox,.apply-card .submitButtonContainer_wrapper,.apply-card a.submitButton{width:100%!important;height:auto!important;display:block!important;text-decoration:none!important;}
+.apply-card .submitbuttonbox{margin-top:6px;}
+.apply-card button.submitButton{
+  width:100%!important;height:auto!important;min-height:56px;
+  background:linear-gradient(135deg,var(--coral) 0%,var(--coral-deep) 100%)!important;
+  color:#fff!important;border:none!important;border-radius:999px!important;
+  font-family:'Heebo',sans-serif!important;font-weight:800!important;font-size:17px!important;
+  cursor:pointer;box-shadow:0 10px 26px rgba(194,44,92,.3);
+  transition:transform .2s ease,box-shadow .2s ease;
+}
+.apply-card button.submitButton:hover{transform:translateY(-2px);box-shadow:0 14px 32px rgba(194,44,92,.42);}
+.apply-note{margin-top:16px;font-size:13.5px;line-height:1.65;color:rgba(255,255,255,.82);position:relative;z-index:1;}
 .btn svg{flex:none;}
 
 /* NAV */
@@ -82,7 +112,8 @@ body::before{
 .nav-inner{max-width:1160px;margin:0 auto;padding:12px clamp(16px,4vw,28px);display:flex;align-items:center;justify-content:space-between;gap:12px;}
 .nav-logo img{height:clamp(38px,6vw,50px);width:auto;}
 .nav-cta{font-size:14px;padding:11px 20px;}
-@media (max-width:520px){.nav-cta span.long{display:none;}}
+.nav-cta span.short{display:none;}
+@media (max-width:520px){.nav-cta span.long{display:none;}.nav-cta span.short{display:inline;}.nav-cta{font-size:13.5px;padding:10px 15px;}}
 
 /* EYEBROW */
 .eyebrow{
@@ -364,9 +395,8 @@ body{padding-bottom:76px;}
 <nav class="nav">
   <div class="nav-inner">
     <a class="nav-logo" href="#top"><img src="assets/logo.png" alt="שרה שרבאני - מאמנת עסקית-רוחנית"></a>
-    <a class="btn btn-wa nav-cta" href="https://wa.me/message/7DOKCXRTBY4UG1" target="_blank" rel="noopener">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.7.44 3.35 1.29 4.81L2 22l5.44-1.36a9.9 9.9 0 0 0 4.6 1.17h.01c5.46 0 9.9-4.45 9.9-9.91C21.95 6.45 17.5 2 12.04 2Z" opacity=".15"/><path d="M17.47 14.38c-.28-.14-1.65-.81-1.9-.9-.26-.1-.44-.14-.63.14-.19.28-.72.9-.89 1.08-.16.19-.33.21-.61.07-.28-.14-1.18-.44-2.24-1.39-.83-.74-1.39-1.66-1.55-1.94-.16-.28-.02-.43.12-.57.13-.13.28-.33.42-.5.14-.16.19-.28.28-.47.09-.19.05-.35-.02-.5-.07-.14-.63-1.53-.87-2.09-.23-.55-.46-.48-.63-.48-.16-.01-.35-.01-.54-.01-.19 0-.5.07-.76.35-.26.28-1 1-1 2.42 0 1.43 1.03 2.82 1.18 3.01.14.19 2.03 3.1 4.92 4.35.69.3 1.22.48 1.64.61.69.22 1.31.19 1.81.11.55-.08 1.65-.67 1.89-1.33.23-.65.23-1.2.16-1.33-.07-.12-.26-.19-.54-.33Z"/></svg>
-      <span class="long">כתבי לי בוואטסאפ</span>
+    <a class="btn btn-primary nav-cta" href="#apply">
+      <span class="long">להגשת מועמדות</span><span class="short">מועמדות</span>
     </a>
   </div>
 </nav>
@@ -403,10 +433,7 @@ body{padding-bottom:76px;}
         </div>
       </div>
       <div class="hero-actions">
-        <a class="btn btn-wa" href="https://wa.me/message/7DOKCXRTBY4UG1" target="_blank" rel="noopener">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.47 14.38c-.28-.14-1.65-.81-1.9-.9-.26-.1-.44-.14-.63.14-.19.28-.72.9-.89 1.08-.16.19-.33.21-.61.07-.28-.14-1.18-.44-2.24-1.39-.83-.74-1.39-1.66-1.55-1.94-.16-.28-.02-.43.12-.57.13-.13.28-.33.42-.5.14-.16.19-.28.28-.47.09-.19.05-.35-.02-.5-.07-.14-.63-1.53-.87-2.09-.23-.55-.46-.48-.63-.48-.16-.01-.35-.01-.54-.01-.19 0-.5.07-.76.35-.26.28-1 1-1 2.42 0 1.43 1.03 2.82 1.18 3.01.14.19 2.03 3.1 4.92 4.35.69.3 1.22.48 1.64.61.69.22 1.31.19 1.81.11.55-.08 1.65-.67 1.89-1.33.23-.65.23-1.2.16-1.33-.07-.12-.26-.19-.54-.33ZM12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.7.44 3.35 1.29 4.81L2 22l5.44-1.36a9.9 9.9 0 0 0 4.6 1.17h.01c5.46 0 9.9-4.45 9.9-9.91C21.95 6.45 17.5 2 12.04 2Z"/></svg>
-          להרשמה להכשרה
-        </a>
+        <a class="btn btn-primary" href="#apply">להגשת מועמדות להכשרה</a>
         <a class="btn btn-outline" href="#practical">לפרטים המלאים</a>
       </div>
     </div>
@@ -526,7 +553,7 @@ body{padding-bottom:76px;}
     <div class="final-cta mid">
       <h2 class="h2">בואי לסלול לעצמך דרך חדשה - מבפנים החוצה</h2>
       <p class="lead" style="margin-bottom:18px;">נשמח להכיר אותך. ההרשמה כרוכה בראיון קבלה קצר.</p>
-      <a class="btn btn-outline" href="https://wa.me/message/7DOKCXRTBY4UG1" target="_blank" rel="noopener">להרשמה ולתיאום ראיון קבלה</a>
+      <a class="btn btn-primary" href="#apply">להגשת מועמדות</a>
     </div>
   </div>
 </section>
@@ -770,7 +797,7 @@ body{padding-bottom:76px;}
     <p style="text-align:center;margin-top:26px;font-size:16px;line-height:1.6;">המחיר המלא של ההכשרה הוא <strong>19,400 ₪</strong>.<br><span style="font-family:'Heebo',sans-serif;font-weight:800;font-size:17px;color:var(--coral-deep);">זה לא המחיר שתשלמי אם תסגרי מקום עכשיו.</span></p>
     <div class="price-band" style="margin-top:12px;">
       <div class="amount"><span>מחיר הרשמה מוקדמת עד 22.8</span>17,400 ₪<span style="display:block;margin-top:8px;font-size:12.5px;color:rgba(255,255,255,.6);font-weight:400;line-height:1.6;">עד 15.9: 18,400 ₪ · מ-16.9: 19,400 ₪</span></div>
-      <a class="btn btn-wa" href="https://wa.me/message/7DOKCXRTBY4UG1" target="_blank" rel="noopener">לתיאום ראיון קבלה</a>
+      <a class="btn btn-primary" href="#apply">להגשת מועמדות</a>
     </div>
     <p style="text-align:center;margin-top:16px;font-size:15px;line-height:1.65;"><strong>מספר המקומות מוגבל.</strong> ההכשרה בנויה על ליווי אישי לכל משתתפת, ולכן הקבוצה לא תיפתח מעבר לגודל שמאפשר את זה.</p>
     <p style="text-align:center;margin-top:10px;font-size:14.5px;color:var(--ink-soft);">אפשרויות מימון ותשלומים יימסרו בראיון, למי שתימצא מתאימה.</p>
@@ -999,13 +1026,19 @@ body{padding-bottom:76px;}
 </section>
 
 <!-- CTA סופי -->
-<section class="reveal">
+<section class="reveal" id="apply">
   <div class="container-narrow">
     <div class="final-cta">
       <h2 class="h2">תתאהבי בעסק שלך. ותעבירי את זה הלאה.</h2>
-      <p class="lead" style="margin-bottom:26px;">אם הגעת עד לכאן, כנראה שמשהו בפנים כבר יודע. נשמח להכיר אותך - ההרשמה כרוכה בראיון קבלה קצר.</p>
-      <a class="btn btn-outline" href="https://wa.me/message/7DOKCXRTBY4UG1" target="_blank" rel="noopener">להרשמה ולתיאום ראיון קבלה</a>
-      <p style="margin-top:26px;color:rgba(255,255,255,.85);">מחכה לך בהתרגשות,<br><strong style="color:#fff;">שרה שרבאני</strong></p>
+      <p class="lead" style="margin-bottom:22px;">אם הגעת עד לכאן, כנראה שמשהו בפנים כבר יודע.</p>
+      <p style="font-family:'Heebo',sans-serif;font-weight:800;font-size:18px;line-height:1.55;color:#fff;margin-bottom:16px;position:relative;z-index:1;">להגשת מועמדות למחזור שנפתח ב-12.10<br>מלאי את הפרטים:</p>
+      <div class="apply-card">
+        <!-- ===== RAV MESSER FORM EMBED ===== -->
+        <script type="text/javascript" src="https://form2.ravpage.co.il/f1b6e451002d3e6821f307d2341fbd566A79A0F6" charset="UTF-8"></script>
+        <!-- ===== END RAV MESSER FORM EMBED ===== -->
+      </div>
+      <p class="apply-note">*אין תשלום בסוף הטופס. אחרי ההרשמה נקבע איתך שיחת ראיון קבלה, ולא כל מי שפונה מתקבלת. מספר המקומות מוגבל.</p>
+      <p style="margin-top:24px;color:rgba(255,255,255,.85);position:relative;z-index:1;">מחכה לך בהתרגשות,<br><strong style="color:#fff;">שרה שרבאני</strong></p>
     </div>
   </div>
 </section>
