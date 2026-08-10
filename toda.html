@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>תודה - קיבלתי את הפרטים שלך | שרה שרבאני</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700;800;900&family=Assistant:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --coral:#E63E70;
+  --coral-deep:#C22C5C;
+  --coral-tint:#FCE4EB;
+  --ink:#2E2A2C;
+  --ink-soft:#75686B;
+  --paper:#FFFCF9;
+  --line:rgba(46,42,44,.12);
+  --radius:22px;
+  --radius-lg:30px;
+  --whatsapp:#25D366;
+}
+*{box-sizing:border-box;}
+body{
+  margin:0;
+  font-family:'Assistant',sans-serif;
+  color:var(--ink);
+  background:var(--paper);
+  direction:rtl;
+  text-align:right;
+  line-height:1.7;
+  font-size:17px;
+  -webkit-font-smoothing:antialiased;
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+}
+h1,h2{font-family:'Heebo',sans-serif;margin:0;color:var(--ink);font-weight:800;letter-spacing:-.01em;}
+
+.topbar{border-bottom:1px solid var(--line);background:#fff;}
+.topbar-inner{max-width:760px;margin:0 auto;padding:14px clamp(20px,5vw,32px);}
+.topbar img{height:40px;width:auto;display:block;}
+
+.wrap{flex:1;max-width:760px;margin:0 auto;padding:clamp(32px,7vw,64px) clamp(20px,5vw,32px) clamp(48px,8vw,80px);width:100%;}
+
+.card{
+  background:linear-gradient(135deg,var(--coral) 0%,var(--coral-deep) 100%);
+  color:#fff;border-radius:var(--radius-lg);
+  padding:clamp(32px,6vw,56px) clamp(24px,5vw,48px);
+  text-align:center;position:relative;overflow:hidden;
+}
+.card::after{content:"";position:absolute;width:320px;height:320px;background:rgba(255,255,255,.08);border-radius:50%;top:-150px;left:-110px;}
+.card > *{position:relative;z-index:1;}
+.card h1{color:#fff;font-size:clamp(27px,5.4vw,40px);line-height:1.2;}
+.card p{color:rgba(255,255,255,.92);}
+
+.tick{
+  width:62px;height:62px;border-radius:50%;
+  background:rgba(255,255,255,.16);
+  display:flex;align-items:center;justify-content:center;
+  margin:0 auto 20px;
+}
+
+.next{
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+  padding:clamp(22px,4vw,32px);margin-top:26px;box-shadow:0 2px 16px rgba(46,42,44,.07);
+}
+.next h2{font-size:clamp(19px,3vw,23px);margin-bottom:16px;}
+.steps{list-style:none;margin:0;padding:0;counter-reset:s;}
+.steps li{
+  counter-increment:s;position:relative;
+  padding:0 46px 0 0;margin-bottom:16px;line-height:1.65;
+}
+.steps li:last-child{margin-bottom:0;}
+.steps li::before{
+  content:counter(s);position:absolute;right:0;top:1px;
+  width:30px;height:30px;border-radius:50%;
+  background:var(--coral-tint);color:var(--coral-deep);
+  font-family:'Heebo',sans-serif;font-weight:800;font-size:15px;
+  display:flex;align-items:center;justify-content:center;
+}
+
+.meanwhile{margin-top:26px;text-align:center;}
+.meanwhile p{color:var(--ink-soft);font-size:15.5px;margin:0 0 16px;}
+.actions{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:9px;
+  font-family:'Heebo',sans-serif;font-weight:700;font-size:16px;
+  padding:14px 26px;border-radius:999px;text-decoration:none;
+  transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+.btn svg{flex:none;}
+.btn-wa{background:var(--whatsapp);color:#fff;box-shadow:0 10px 26px rgba(37,211,102,.28);}
+.btn-wa:hover{transform:translateY(-2px);box-shadow:0 14px 32px rgba(37,211,102,.38);}
+.btn-outline{background:transparent;color:var(--ink);border:1.5px solid var(--line);}
+.btn-outline:hover{border-color:var(--ink);}
+
+.sign{margin-top:34px;text-align:center;color:var(--ink-soft);font-size:16px;line-height:1.6;}
+.sign strong{display:block;font-family:'Heebo',sans-serif;font-weight:800;color:var(--ink);font-size:18px;margin-top:4px;}
+
+@media (max-width:420px){
+  .actions .btn{width:100%;}
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <a href="/"><img src="assets/logo.png" alt="שרה שרבאני"></a>
+  </div>
+</div>
+
+<main class="wrap">
+
+  <div class="card">
+    <div class="tick">
+      <svg width="30" height="30" viewBox="0 0 24 24" fill="none"><path d="M4.5 12.6l4.8 4.8L19.5 7.2" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+    <h1>קיבלתי את הפרטים שלך</h1>
+    <p style="font-size:clamp(17px,2vw,19px);margin:14px 0 0;">המועמדות שלך למחזור שנפתח ב-12.10 נרשמה.<br>עכשיו תורי.</p>
+  </div>
+
+  <div class="next">
+    <h2>מה קורה מכאן</h2>
+    <ol class="steps">
+      <li>אצור איתך קשר לתיאום <strong>שיחת ראיון קבלה</strong>.</li>
+      <li>בשיחה נכיר, אשמע איפה את נמצאת היום ולאן את רוצה להגיע - ונבדוק ביחד אם ההכשרה הזו נכונה לך.</li>
+      <li>אם נמצא שזו ההתאמה הנכונה, נסגור את המקום שלך בקבוצה ואעביר לך את כל הפרטים.</li>
+    </ol>
+  </div>
+
+  <div class="meanwhile">
+    <p>בינתיים, אם בא לך להעמיק:</p>
+    <div class="actions">
+      <a class="btn btn-outline" href="https://drive.google.com/file/d/1lhyfwbAL3ZbsNwqEPzKqwyQfhHPioqpp/view" target="_blank" rel="noopener">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8l-5-5Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M14 3v5h5M9 13h6M9 17h4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        לצפייה בסילבוס המלא
+      </a>
+      <a class="btn btn-wa" href="https://wa.me/message/7DOKCXRTBY4UG1" target="_blank" rel="noopener">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.47 14.38c-.28-.14-1.65-.81-1.9-.9-.26-.1-.44-.14-.63.14-.19.28-.72.9-.89 1.08-.16.19-.33.21-.61.07-.28-.14-1.18-.44-2.24-1.39-.83-.74-1.39-1.66-1.55-1.94-.16-.28-.02-.43.12-.57.13-.13.28-.33.42-.5.14-.16.19-.28.28-.47.09-.19.05-.35-.02-.5-.07-.14-.63-1.53-.87-2.09-.23-.55-.46-.48-.63-.48-.16-.01-.35-.01-.54-.01-.19 0-.5.07-.76.35-.26.28-1 1-1 2.42 0 1.43 1.03 2.82 1.18 3.01.14.19 2.03 3.1 4.92 4.35.69.3 1.22.48 1.64.61.69.22 1.31.19 1.81.11.55-.08 1.65-.67 1.89-1.33.23-.65.23-1.2.16-1.33-.07-.12-.26-.19-.54-.33ZM12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.7.44 3.35 1.29 4.81L2 22l5.44-1.36a9.9 9.9 0 0 0 4.6 1.17h.01c5.46 0 9.9-4.45 9.9-9.91C21.95 6.45 17.5 2 12.04 2Z"/></svg>
+        יש לי שאלה
+      </a>
+    </div>
+  </div>
+
+  <p class="sign">
+    מחכה להכיר אותך,
+    <strong>שרה שרבאני</strong>
+  </p>
+
+</main>
+
+</body>
+</html>
