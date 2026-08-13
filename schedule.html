@@ -18,6 +18,9 @@
   --line:rgba(46,42,44,.12);
   --teal:#1B8F89;
   --teal-tint:#E3F2F0;
+  --orange:#F7A94A;
+  --orange-tint:#FFF1DE;
+  --orange-deep:#B4741F;
   --radius:22px;
 }
 *{box-sizing:border-box;}
@@ -134,6 +137,46 @@ h1,h2{font-family:'Heebo',sans-serif;margin:0;color:var(--ink);font-weight:800;l
 .legend{
   display:flex;align-items:center;justify-content:center;gap:7px;
   font-size:13.5px;color:var(--ink-soft);margin:0 0 16px;
+}
+
+.section-title{
+  text-align:center;font-family:'Heebo',sans-serif;font-weight:800;
+  font-size:clamp(21px,3.4vw,27px);margin:34px 0 6px;
+}
+.section-sub{text-align:center;color:var(--ink-soft);font-size:15.5px;margin:0 0 18px;}
+
+.event{
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+  padding:clamp(16px,3vw,24px);margin-bottom:14px;box-shadow:0 2px 16px rgba(46,42,44,.06);
+}
+.event h3{
+  font-family:'Heebo',sans-serif;font-weight:800;font-size:17.5px;
+  margin:0 0 8px;line-height:1.4;
+}
+.event p{margin:0;font-size:15.5px;line-height:1.7;color:var(--ink-soft);}
+.tbd{
+  display:inline-flex;align-items:center;gap:6px;
+  background:var(--orange-tint);color:var(--orange-deep);
+  font-family:'Heebo',sans-serif;font-weight:700;font-size:12.5px;
+  border-radius:999px;padding:4px 12px;margin-bottom:10px;
+}
+
+.deliverables{
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+  padding:clamp(18px,3.4vw,28px);box-shadow:0 2px 16px rgba(46,42,44,.06);
+}
+.deliverables ul{list-style:none;margin:0;padding:0;}
+.deliverables li{
+  position:relative;padding:9px 34px 9px 0;font-size:15.5px;line-height:1.65;
+  border-top:1px solid var(--line);
+}
+.deliverables li:first-child{border-top:none;}
+.deliverables li::before{
+  content:"✓";position:absolute;right:0;top:9px;
+  width:22px;height:22px;border-radius:50%;
+  background:var(--coral-tint);color:var(--coral-deep);
+  font-size:12px;font-weight:800;
+  display:flex;align-items:center;justify-content:center;
 }
 
 .closing{
@@ -425,6 +468,37 @@ h1,h2{font-family:'Heebo',sans-serif;margin:0;color:var(--ink);font-weight:800;l
     המפגש האחרון: <b>05.04.2027</b><br>
     סיכום שלם של כל הדרך, ובניית התוכנית הלאה.
   </p>
+
+  <h2 class="section-title">אירועים מיוחדים לנשים מדהימות</h2>
+  <p class="section-sub">שני אירועים נוספים, מעבר ל-24 המפגשים</p>
+
+  <div class="event">
+    <span class="tbd">התאריך יפורסם בהמשך</span>
+    <h3>כנס הרצאות Zoom · כלי שיווקי שמגדיל חשיפה</h3>
+    <p>כל משתתפת מעבירה הרצאה לקהל אמיתי, חשיפה, נראות ותרגול בזמן אמת מול קהל שאינו רק הקבוצה.</p>
+  </div>
+
+  <div class="event">
+    <span class="tbd">התאריך יפורסם בהמשך</span>
+    <h3>ריטריט · “ששש, זה אך ורק לנו”</h3>
+    <p>כל משתתפת מנחה סדנה כחלק מריטריט יום מפנק עם מגוון סדנאות מתחלפות.</p>
+  </div>
+
+  <h2 class="section-title">תוצרים בסיום ההכשרה</h2>
+  <p class="section-sub">מעבר לתעודת ההסמכה, בסיום ההכשרה יהיו בידייך:</p>
+
+  <div class="deliverables">
+    <ul>
+      <li>הרצאה בכנס דיגיטלי</li>
+      <li>סדנה בריטריט</li>
+      <li>סטאז' מעשי על מינימום 3 נשים</li>
+      <li>דף נחיתה אישי משלך</li>
+      <li>2 פגישות פרטניות איתי</li>
+      <li>פגישה אחת לדיגיטל ו-AI עם מומחית בתחום</li>
+      <li>סל מוצרים מלא הכולל 4 סוגי מוצרים: מוצר חינמי, מוצר במחיר סמלי, פגישה פרטנית, ומוצר פרימיום</li>
+      <li>תעודת הסמכה כמטפלת עסקית בשיטת Inside Out</li>
+    </ul>
+  </div>
 
 </div>
 
