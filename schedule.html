@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>לוח המפגשים | הכשרת מטפלות עסקיות בשיטת Inside Out</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700;800;900&family=Assistant:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --coral:#E63E70;
+  --coral-deep:#C22C5C;
+  --coral-tint:#FCE4EB;
+  --ink:#2E2A2C;
+  --ink-soft:#75686B;
+  --paper:#FFFCF9;
+  --line:rgba(46,42,44,.12);
+  --teal:#1B8F89;
+  --teal-tint:#E3F2F0;
+  --radius:22px;
+}
+*{box-sizing:border-box;}
+body{
+  margin:0;
+  font-family:'Assistant',sans-serif;
+  color:var(--ink);
+  background:var(--paper);
+  direction:rtl;
+  text-align:right;
+  line-height:1.7;
+  font-size:17px;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2{font-family:'Heebo',sans-serif;margin:0;color:var(--ink);font-weight:800;letter-spacing:-.01em;}
+
+.topbar{border-bottom:1px solid var(--line);background:#fff;}
+.topbar-inner{max-width:880px;margin:0 auto;padding:14px clamp(18px,5vw,32px);}
+.topbar img{height:40px;width:auto;display:block;}
+
+.wrap{max-width:880px;margin:0 auto;padding:clamp(28px,6vw,52px) clamp(18px,5vw,32px) clamp(44px,8vw,72px);}
+
+.head{text-align:center;margin-bottom:clamp(22px,4vw,32px);}
+.eyebrow{
+  display:inline-block;font-family:'Heebo',sans-serif;font-weight:700;
+  font-size:13px;letter-spacing:.04em;color:var(--coral-deep);
+  background:var(--coral-tint);border-radius:999px;padding:6px 16px;margin-bottom:14px;
+}
+.head h1{font-size:clamp(28px,5.4vw,40px);line-height:1.2;}
+.facts{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 10px;margin-top:18px;}
+.fact{background:#fff;border:1px solid var(--line);border-radius:999px;padding:7px 16px;font-size:14.5px;color:var(--ink-soft);}
+.fact b{color:var(--ink);font-weight:700;}
+
+.hint{text-align:center;font-size:14.5px;color:var(--ink-soft);margin:0 0 12px;}
+.toolbar{display:flex;justify-content:center;margin-bottom:20px;}
+.toggle-all{
+  font-family:'Heebo',sans-serif;font-weight:700;font-size:14.5px;
+  color:var(--coral-deep);background:#fff;border:1.5px solid var(--line);
+  border-radius:999px;padding:9px 22px;cursor:pointer;transition:border-color .2s ease;
+}
+.toggle-all:hover{border-color:var(--coral);}
+
+.module{
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+  padding:clamp(16px,3vw,24px);margin-bottom:16px;
+  box-shadow:0 2px 16px rgba(46,42,44,.06);
+}
+.module-head{display:flex;align-items:flex-start;gap:12px;margin-bottom:10px;}
+.module-num{
+  flex:none;width:38px;height:38px;border-radius:50%;
+  background:linear-gradient(135deg,var(--coral) 0%,var(--coral-deep) 100%);
+  color:#fff;font-family:'Heebo',sans-serif;font-weight:800;font-size:16px;
+  display:flex;align-items:center;justify-content:center;
+}
+.module-head h2{font-size:clamp(17px,2.6vw,21px);line-height:1.35;padding-top:5px;}
+.module-head .label{display:block;font-family:'Assistant',sans-serif;font-weight:600;font-size:12.5px;color:var(--coral-deep);letter-spacing:.03em;margin-bottom:2px;}
+
+.row{border-top:1px solid var(--line);}
+.row:first-of-type{border-top:none;}
+.row > summary{
+  display:flex;align-items:baseline;gap:12px;
+  padding:12px 0;cursor:pointer;list-style:none;
+  transition:color .15s ease;
+}
+.row > summary::-webkit-details-marker{display:none;}
+.row > summary:hover .title{color:var(--coral-deep);}
+.row .n{flex:none;width:26px;font-family:'Heebo',sans-serif;font-weight:800;font-size:14px;color:var(--coral-deep);}
+.row .date{flex:none;width:92px;font-variant-numeric:tabular-nums;font-weight:700;font-size:15px;}
+.row .title{flex:1;min-width:0;font-size:16px;line-height:1.55;transition:color .15s ease;}
+.row .chev{
+  flex:none;font-family:'Heebo',sans-serif;font-size:19px;color:var(--coral);
+  transform:rotate(90deg);transition:transform .2s ease;line-height:1;align-self:center;
+}
+.row[open] > summary .chev{transform:rotate(-90deg);}
+.row[open] > summary .title{color:var(--coral-deep);font-weight:600;}
+
+.body{
+  padding:2px 38px 18px 0;
+  animation:fade .18s ease;
+}
+@keyframes fade{from{opacity:0;transform:translateY(-3px);}to{opacity:1;transform:none;}}
+.body p{margin:0 0 12px;font-size:15.5px;line-height:1.75;color:var(--ink-soft);}
+.body p:last-child{margin-bottom:0;}
+.takeaway{
+  background:var(--coral-tint);border-radius:14px;padding:12px 16px;
+  color:var(--ink)!important;font-size:15px!important;
+}
+.takeaway b{font-family:'Heebo',sans-serif;font-weight:800;color:var(--coral-deep);}
+.note{
+  border-inline-start:3px solid var(--coral);padding-inline-start:14px;
+  font-style:normal;color:var(--ink)!important;font-size:15px!important;
+}
+
+.break{
+  display:flex;align-items:center;gap:10px;flex-wrap:wrap;
+  background:var(--coral-tint);border-radius:14px;padding:12px 16px;margin:14px 0;
+}
+.break .date{font-variant-numeric:tabular-nums;font-weight:800;font-size:15px;color:var(--coral-deep);font-family:'Heebo',sans-serif;}
+.break .txt{font-size:15.5px;color:var(--coral-deep);}
+
+.zoom-badge{
+  display:inline-flex;align-items:center;gap:5px;
+  background:var(--teal-tint);color:var(--teal);
+  font-family:'Heebo',sans-serif;font-weight:700;font-size:12px;
+  border-radius:999px;padding:3px 10px;margin-inline-start:8px;
+  vertical-align:middle;white-space:nowrap;
+}
+.zoom-line{
+  display:flex;align-items:center;gap:9px;
+  background:var(--teal-tint);border-radius:14px;padding:11px 15px;
+  color:var(--teal)!important;font-size:15px!important;font-weight:600;
+}
+.zoom-line svg{flex:none;}
+.legend{
+  display:flex;align-items:center;justify-content:center;gap:7px;
+  font-size:13.5px;color:var(--ink-soft);margin:0 0 16px;
+}
+
+.closing{
+  text-align:center;margin-top:26px;padding:20px;
+  border:1px dashed var(--line);border-radius:var(--radius);
+  font-size:16px;color:var(--ink-soft);
+}
+.closing b{color:var(--ink);font-family:'Heebo',sans-serif;font-weight:800;}
+
+@media (max-width:560px){
+  .row > summary{flex-wrap:wrap;gap:6px 10px;}
+  .row .title{flex:1 0 100%;padding-inline-end:38px;}
+  .row .chev{position:absolute;inset-inline-start:0;}
+  .row > summary{position:relative;}
+  .body{padding-inline-start:0;padding-inline-end:0;}
+}
+
+@media print{
+  body{background:#fff;font-size:11pt;}
+  .toolbar,.hint{display:none;}
+  .wrap{padding:14pt 0;max-width:100%;}
+  .module{box-shadow:none;border:1px solid #ddd;break-inside:avoid;page-break-inside:avoid;margin-bottom:9pt;}
+  .break{break-inside:avoid;page-break-inside:avoid;}
+  .fact{border:1px solid #ddd;}
+  .row .chev{display:none;}
+  /* לפתוח את כל הפירוטים בהדפסה */
+  .row > *:not(summary){display:block!important;}
+  .row{break-inside:avoid;page-break-inside:avoid;}
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <img src="assets/logo.png" alt="שרה שרבאני">
+  </div>
+</div>
+
+<div class="wrap">
+
+  <div class="head">
+    <span class="eyebrow">הכשרת מטפלות עסקיות בשיטת Inside Out</span>
+    <h1>לוח המפגשים</h1>
+    <div class="facts">
+      <span class="fact">פתיחה <b>12.10.2026</b></span>
+      <span class="fact">סיום <b>05.04.2027</b></span>
+      <span class="fact"><b>ימי שני</b></span>
+      <span class="fact"><b>24</b> מפגשים</span>
+      <span class="fact"><b>6</b> מודולות</span>
+      <span class="fact"><b>22</b> פרונטליים בבית שמש</span>
+      <span class="fact"><b>2</b> בזום</span>
+    </div>
+  </div>
+
+  <p class="hint">לחצי על כל מפגש כדי לפתוח את הפירוט המלא</p>
+  <p class="legend"><span class="zoom-badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="none"><rect x="2" y="6" width="13" height="12" rx="3" fill="currentColor"/><path d="M17 10.5l4-2.4v7.8l-4-2.4z" fill="currentColor"/></svg>זום</span> מסמן מפגש שמתקיים בזום, כל אחד עם מרצה אורח משלו</p>
+  <div class="toolbar"><button class="toggle-all" type="button">לפתוח את כל המפגשים</button></div>
+
+  <!-- מודולה 1 -->
+  <div class="module">
+    <div class="module-head">
+      <div class="module-num">1</div>
+      <h2><span class="label">מודולה ראשונה</span>להתאהב בעצמי: מי אני באמת?</h2>
+    </div>
+
+    <details class="row"><summary><span class="n">1</span><span class="date">12.10.2026</span><span class="title">מי אני</span><span class="chev">›</span></summary>
+      <div class="body">
+        <p>לפני שנוגעות בעסק, בלקוחות או בשיווק, נעצור ונשאל את השאלה שבאמת מנהלת הכל: מי את? במפגש הזה תעברי מסע אל מסע הנשמה שלך, תכתבי את סיפור החיים שלך כמסע גיבורה (לא כרשימת אירועים), ותזהי את הערכים והחוזקות שכבר קיימים בך, גם אם שכחת מהם.</p>
+        <p class="takeaway"><b>תצאי עם:</b> מפת זהות אישית, המסמך הראשון שילווה אותך לאורך כל ההכשרה, ושתחזרי אליו כל פעם שתשאלי את עצמך “מה אני עושה כאן בכלל”.</p>
+      </div>
+    </details>
+
+    <details class="row"><summary><span class="n">2</span><span class="date">19.10.2026</span><span class="title">לא סתם עברתי את זה - לקבל את כל החלקים שבי<span class="zoom-badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="none"><rect x="2" y="6" width="13" height="12" rx="3" fill="currentColor"/><path d="M17 10.5l4-2.4v7.8l-4-2.4z" fill="currentColor"/></svg>זום</span></span><span class="chev">›</span></summary>
+      <div class="body">
+        <p class="zoom-line"><svg width="17" height="17" viewBox="0 0 24 24" fill="none"><rect x="2" y="6" width="13" height="12" rx="3" fill="currentColor"/><path d="M17 10.5l4-2.4v7.8l-4-2.4z" fill="currentColor"/></svg>המפגש מתקיים בזום, עם מרצה אורח.</p>
+        <p>כל מה שעברת, הטראומות, הקשיים, הדפוסים שנוצרו כדי להגן עלייך, לא קרו במקרה, ולא צריכים להיעלם כדי שתצליחי. במפגש הזה נלמד להבין מה זו טראומה מנקודת מבט של מערכת העצבים (לא רק כסיפור), נכיר את מנגנוני ההישרדות שהתפתחו אצלך, ונפגוש את החלקים הפנימיים השונים שלך, לא כדי להילחם בהם, אלא כדי לקבל אותם.</p>
+        <p class="takeaway"><b>תצאי עם:</b> הבנה עמוקה של מנגנוני הטראומה ומערכת העצבים שלך, הבסיס לכל עבודה טיפולית שתעשי מכאן והלאה, גם עם עצמך וגם עם לקוחות.</p>
+      </div>
+    </details>
+
+    <details class="row"><summary><span class="n">3</span><span class="date">26.10.2026</span><span class="title">למה אני תקועה - להפוך את הפצע לכוח</span><span class="chev">›</span></summary>
+      <div class="body">
+        <p>למה יש לך אמונה שאת יודעת שהיא לא נכונה, ועדיין את פועלת לפיה? במפגש הזה ניפגש עם הילדה הפנימית שלך, נזהה את האמונות המגבילות שמנהלות אותך בשקט, ונבין למה שינוי, גם כשהוא כן קורה, לפעמים “לא מחזיק”. נלמד להכיר בפער בין מה שאת רוצה במודע לבין מה שהתת-מודע שלך עדיין מאמין בו.</p>
+        <p class="takeaway"><b>תצאי עם:</b> עבודה מעשית וישירה עם הקולות הפנימיים שלך, לא רק להכיר אותם, אלא לדעת לעבוד איתם בפועל.</p>
+      </div>
+    </details>
+
+    <details class="row"><summary><span class="n">4</span><span class="date">02.11.2026</span><span class="title">להיות הדבר - להפוך לאישה שאני רוצה להיות</span><span class="chev">›</span></summary>
+      <div class="body">
+        <p>זהות היא לא רק מי שהיית, היא גם מי שאת בוחרת להיות מעכשיו. במפגש הזה תבני חזון אישי ברור, תביני איך הרגלים יומיים בונים זהות (ולא להפך), ונעבור יחד טקס מעבר סמלי מהזהות הישנה לזהות החדשה שלך.</p>
+        <p class="takeaway"><b>תצאי עם:</b> חוזה אישי ומפת מעבר, מסמך מחייב, שמסמן במדויק את הדרך מהיום שאת בו לאישה שאת רוצה להיות.</p>
+      </div>
+    </details>
+  </div>
+
+  <!-- מודולה 2 -->
+  <div class="module">
+    <div class="module-head">
+      <div class="module-num">2</div>
+      <h2><span class="label">מודולה שנייה</span>להתאהב בשליחות שלי</h2>
+    </div>
+
+    <details class="row"><summary><span class="n">5</span><span class="date">09.11.2026</span><span class="title">אני חושבת שאני לא יודעת כלום - הידע שכבר קיים בתוכי</span><span class="chev">›</span></summary>
+      <div class="body">
+        <p>רוב הנשים בטוחות שהן צריכות עוד קורס, עוד תעודה, עוד ידע, לפני שהן “מספיק מוכנות” ללוות אחרות. במפגש הזה נגלה שהידע החי, האינטואיציה וניסיון החיים שלך הם כבר מקור ידע אמיתי ומדויק, לא פחות מכל תעודה.</p>
+        <p class="takeaway"><b>תצאי עם:</b> מפת הידע שלך, מסמך שמראה לך בשחור על גבי לבן כמה ידע כבר יש לך, עוד לפני שהתחלת ללמוד שיטה חדשה.</p>
+      </div>
+    </details>
+
+    <details class="row"><summary><span class="n">6</span><span class="date">16.11.2026</span><span class="title">תחילת איסוף חומרי השיווק שלי - נקודת המבט שלי על העולם</span><span class="chev">›</span></summary>
+      <div class="body">
+        <p>מה שמבדל אותך בשוק זה לא עוד טכניקה או לוגו מעוצב, זו נקודת המבט הייחודית שלך, האג'נדה שלך, מה שאת מאמינה בו ועוד. במפגש הזה נבנה יחד את השפה שלך, את הבידול שלך ואת החזון שמאחורי העסק שלך.</p>
+        <p class="takeaway"><b>תצאי עם:</b> כל מרכיבי השליחות שלך כתובים ומוגדרים, הבסיס לכל תוכן, כל פוסט וכל שיחת מכירה שתעשי מעכשיו.</p>
+      </div>
+    </details>
+
+    <details class="row"><summary><span class="n">7</span><span class="date">23.11.2026</span><span class="title">אני יודעת שאני יודעת אבל לא יודעת מה - להפוך ידע לשיטה</span><span class="chev">›</span></summary>
+      <div class="body">
+        <p>יש לך תובנות, יש לך ניסיון, אבל איך הופכים את זה למשהו שאפשר ללמד וללוות איתו אחרות? במפגש הזה נלמד מהי שיטה בכלל, איך בונים תהליך מסודר, נכיר את מודל Inside Out ואת האופן שבו הוא מחבר בין טיפול לעסק, ונדבר על גבולות השיטה, מה היא כן, ומה היא לא.</p>
+        <p class="takeaway"><b>תצאי עם:</b> טיוטה ראשונה של המתודולוגיה האישית שלך, הגרסה הראשונית של השיטה הייחודית שתלווי דרכה נשים אחרות.</p>
+      </div>
+    </details>
+
+    <details class="row"><summary><span class="n">8</span><span class="date">30.11.2026</span><span class="title">תגידי מה את עושה בחיים? - לתרגם את השליחות שלי לדרך</span><span class="chev">›</span></summary>
+      <div class="body">
+        <p>השאלה הכי מביכה שיש (“אז מה את בעצם עושה?”) הופכת סוף סוף לתשובה ברורה. במפגש הזה נבין איך השליחות שלך הופכת למקצוע מעשי, נזהה למי בדיוק את רוצה לעזור (ובאיזו רמת תודעה), ונבין באיזה סוג ליווי, גבולות ודרך את רוצה ללכת.</p>
+        <p class="takeaway"><b>תצאי עם:</b> הגדרה ברורה של הדרך שאת רוצה להוביל בה, הקדמה למודולה הבאה, שבה זה כבר יפגוש לקוחות אמיתיות.</p>
+      </div>
+    </details>
+  </div>
+
+  <div class="break">
+    <span class="date">07.12.2026</span>
+    <span class="txt">אין מפגש. חנוכה.</span>
+  </div>
+
+  <!-- מודולה 3 -->
+  <div class="module">
+    <div class="module-head">
+      <div class="module-num">3</div>
+      <h2><span class="label">מודולה שלישית</span>אמא'לה מי תבוא אלי: להתאהב בלקוחות שלי</h2>
+    </div>
+
+    <details class="row"><summary><span class="n">9</span><span class="date">14.12.2026</span><span class="title">לראות מעבר למה שנאמר</span><span class="chev">›</span></summary>
+      <div class="body">
+        <p>לקוחה יכולה להגיד לך משפט אחד, ולהתכוון לחמישה דברים אחרים. במפגש הזה נלמד להקשיב מעבר למילים, נכיר סוגי לקוחות ודפוסי תקשורת שונים, נלמד להתאים את השפה שלך לאישה שמולך, ותצפי בהדגמה חיה של מיני-סשן.</p>
+        <p class="takeaway"><b>תצאי עם:</b> היכולת לשמוע את מה שבאמת נאמר בחדר, לא רק את מה שנאמר במילים.</p>
+      </div>
+    </details>
+
+    <details class="row"><summary><span class="n">10</span><span class="date">21.12.2026</span><span class="title">אבל מה עושים שעה שלמה? אומנות החזקת המרחב</span><span class="chev">›</span></summary>
+      <div class="body">
+        <p>את יודעת לדבר עם אנשים, אבל לדעת להחזיק מרחב טיפולי שלם, במשך שעה, זו מיומנות אחרת לגמרי. במפגש הזה נעמיק בקשר הטיפולי, באמון, בגבולות ובאתיקה מקצועית, ונבין מה זה “להציל” לעומת “ללוות”, ואיך לזהות השלכה. תצפי בהדגמה של סשן מלא בלייב, עם ניתוח מלא אחריו.</p>
+        <p class="takeaway"><b>תצאי עם:</b> ביטחון אמיתי להחזיק מרחב טיפולי מלא, לא רק לדעת מה להגיד.</p>
+      </div>
+    </details>
+
+    <details class="row"><summary><span class="n">11</span><span class="date">28.12.2026</span><span class="title">לא בא לי להיות מהשטחיות האלה שרק מהנהנות - אבחון</span><span class="chev">›</span></summary>
+      <div class="body">
+        <p>אבחון אמיתי הוא לא לשאול שאלות ולהנהן. במפגש הזה נלמד שאלות אבחון מדויקות, איך לזהות את השורש (לא רק את הסימפטום), איך בונים מפת טיפול, ונכיר את ארבע שכבות ההתבוננות שמלוות כל תהליך ליווי.</p>
+        <p class="takeaway"><b>תצאי עם:</b> כלי אבחון מובנה שתוכלי להשתמש בו כבר בפגישה הראשונה עם כל לקוחה.</p>
+      </div>
+    </details>
+
+    <details class="row"><summary><span class="n">12</span><span class="date">04.01.2027</span><span class="title">איך אני עושה את הצעד הראשון שלי - הפגישה הראשונה</span><span class="chev">›</span></summary>
+      <div class="body">
+        <p>הרגע הכי מלחיץ, הפגישה הראשונה עם לקוחה, הופך למובנה וברור. במפגש הזה נלמד את מבנה הפגישה הראשונה, נראה הדגמה, נתרגל בעצמנו, ונקבל משוב וסופרוויז'ן אישי.</p>
+        <p class="note">בסיום המפגש הזה מתחילה ההתנסות המעשית שלך: תתחילי ללוות אישה אמיתית, ותתרגלי אבחון, הקשבה, יצירת אמון וזיהוי חסמים, עדיין בלי לגעת בעסק שלה. שלב אחד בכל פעם.</p>
+      </div>
+    </details>
+  </div>
+
+  <!-- מודולה 4 -->
+  <div class="module">
+    <div class="module-head">
+      <div class="module-num">4</div>
+      <h2><span class="label">מודולה רביעית</span>ועכשיו כל מה שעשיתי בהתפתחות האישית עובר גם לעסק: להתאהב בעסק שלי</h2>
+    </div>
+
+    <details class="row"><summary><span class="n">13</span><span class="date">11.01.2027</span><span class="title">“הצילו! זה לא בשבילי!” - להתאהב בטכנולוגיה</span><span class="chev">›</span></summary>
+      <div class="body">
+        <p>טכנולוגיה מפחידה הרבה פחות ברגע שיש לך מישהי שמראה לך בדיוק מה לעשות. במפגש הזה נלמד להשתמש ב-AI ככלי עבודה, נכיר אוטומציות, נבנה דף נחיתה ומוצר חינמי, ונדבר גם על הבירוקרטיה של פתיחת עסק. את הכל נעשה מתוך חיבור, הומור וקלילות. כמה שפחות התעסקות וכמה שיותר תוצאות.</p>
+        <p class="takeaway"><b>תצאי עם:</b> יכולת טכנולוגית בסיסית ומספקת, ודף נחיתה ראשוני משלך, לא כדי להפוך למומחית טכנולוגיה, אלא כדי שהיא תפסיק לעצור אותך.</p>
+      </div>
+    </details>
+
+    <details class="row"><summary><span class="n">14</span><span class="date">18.01.2027</span><span class="title">גם ככה עמוס לי, איך אנהל עסק? - העסק בתוך החיים שלי</span><span class="chev">›</span></summary>
+      <div class="body">
+        <p>עסק לא בנוי בתוך חלל ריק, הוא בנוי בתוך חיים אמיתיים, עם ילדים, עייפות וזמן מוגבל. במפגש הזה נבנה עסק שבאמת מתאים לחיים שאת רוצה לחיות: כמה את רוצה לעבוד, איך נראה איזון בשבילך, ואיך מנהלים זמן בלי לשרוף את עצמך.</p>
+        <p class="takeaway"><b>תצאי עם:</b> תמונה ברורה של איך העסק שלך אמור להיראות, כדי שהוא יתמוך בחיים שלך ולא יבלע אותם.</p>
+      </div>
+    </details>
+
+    <details class="row"><summary><span class="n">15</span><span class="date">25.01.2027</span><span class="title">אני צריכה גם פרקטיקה אבל שיהיה פשוט וקל - לבנות עסק</span><span class="chev">›</span></summary>
+      <div class="body">
+        <p>אחרי כל העומק הרגשי, הגיע הזמן לסדר. במפגש הזה נלמד מודל עסקי ברור, נכיר את “מחלקות” העסק שלך (כן, גם עסק אחד של אישה אחת צריך מחלקות), ונבנה תוכנית עסקית פשוטה שאת יכולה להחזיק בלי להסתבך.</p>
+        <p class="takeaway"><b>תצאי עם:</b> מבנה עסקי ברור וסדור, לא עוד רשימת משימות, אלא תמונה שלמה.</p>
+      </div>
+    </details>
+
+    <details class="row"><summary><span class="n">16</span><span class="date">01.02.2027</span><span class="title">יהיו לי מוצרים שאני אוהבת? - להתאהב במוצרים שלי</span><span class="chev">›</span></summary>
+      <div class="body">
+        <p>מוצר עסקי טוב הוא לא רק “משהו שמוכרים”, הוא הצעת ערך שאת עצמך מאמינה בה, כי את הלקוחה הראשונה בעסק שלך. במפגש הזה נבנה יחד את סל המוצרים שלך על פני ארבעה סוגי מוצרים: מוצר חינמי, מוצר במחיר סמלי, פגישה פרטנית, ומוצר פרימיום. נלמד למפות את מסע הלקוחה מרגע ההיכרות ועד הליווי המתקדם, ונוודא שכל מוצר שאת מציעה הוא כזה שאת גאה בו.</p>
+        <p class="takeaway"><b>תצאי עם:</b> סל מוצרים מוגדר על פני ארבעת הסוגים, שאת אוהבת למכור, לא רק יודעת למכור.</p>
+      </div>
+    </details>
+
+    <details class="row"><summary><span class="n">17</span><span class="date">08.02.2027</span><span class="title">אני לא טובה בכסף - להתאהב בכסף</span><span class="chev">›</span></summary>
+      <div class="body">
+        <p>מערכת היחסים שלך עם כסף השפיעה על כל החלטת תמחור שקיבלת עד היום, גם אם לא שמת לב. במפגש הזה נפגוש את סיפור הכסף האישי שלך, את הקשר בין כסף לערך עצמי, את הפחד לקבל כסף (כן, זה דבר אמיתי), ונבנה תמחור אמיתי מתוך מטרות כלכליות ורווחיות ברורות.</p>
+        <p class="note">בסיום המודולה הזו הסטאז' שלך מתרחב: מעכשיו תתחילי ללוות גם את הצד העסקי של הלקוחות שלך, לא רק את הצד הרגשי.</p>
+      </div>
+    </details>
+  </div>
+
+  <!-- מודולה 5 -->
+  <div class="module">
+    <div class="module-head">
+      <div class="module-num">5</div>
+      <h2><span class="label">מודולה חמישית</span>יש לי פחד מוות: להתאהב בלהיות בפרונט</h2>
+    </div>
+
+    <details class="row"><summary><span class="n">18</span><span class="date">15.02.2027</span><span class="title">יש לי וידוי, יש בי חיידק במה - האומץ להיראות</span><span class="chev">›</span></summary>
+      <div class="body">
+        <p>פחד מחשיפה הוא לא חולשה, הוא כמעט אוניברסלי, וגם הוא ניתן לעבודה. במפגש הזה נעבוד ישירות על הפחד מחשיפה, על נראות, על מצלמה, על הקול שלך, ונעבור תהליך Shine Out שלם.</p>
+        <p class="takeaway"><b>תצאי עם:</b> יכולת אמיתית להיראות בעולם, לא רק לדעת שצריך, אלא לדעת איך.</p>
+      </div>
+    </details>
+
+    <details class="row"><summary><span class="n">19</span><span class="date">22.02.2027</span><span class="title">יש לי יחסים מורכבים עם הרשתות - להתאהב בשיווק</span><span class="chev">›</span></summary>
+      <div class="body">
+        <p>שיווק לא חייב להרגיש כמו משהו זר שכופים עלייך. במפגש הזה נבין את הפסיכולוגיה שמאחורי שיווק אפקטיבי, נלמד ליצור תוכן שמייצג אותך באמת, נבנה קהילה ומסרים, ונגדיר שגרת שיווק שאת יכולה להחזיק לאורך זמן.</p>
+        <p class="takeaway"><b>תצאי עם:</b> שגרת שיווק שמרגישה כמו את, כזו שבה העוקבות שלך מתאהבות בך.</p>
+      </div>
+    </details>
+
+    <details class="row"><summary><span class="n">20</span><span class="date">01.03.2027</span><span class="title">אני מעולה בלתת בהתנדבות - להתאהב במכירות<span class="zoom-badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="none"><rect x="2" y="6" width="13" height="12" rx="3" fill="currentColor"/><path d="M17 10.5l4-2.4v7.8l-4-2.4z" fill="currentColor"/></svg>זום</span></span><span class="chev">›</span></summary>
+      <div class="body">
+        <p class="zoom-line"><svg width="17" height="17" viewBox="0 0 24 24" fill="none"><rect x="2" y="6" width="13" height="12" rx="3" fill="currentColor"/><path d="M17 10.5l4-2.4v7.8l-4-2.4z" fill="currentColor"/></svg>המפגש מתקיים בזום, עם מרצה אורח.</p>
+        <p>את יודעת לתת, השאלה היא אם את יודעת לבקש בתמורה. במפגש הזה נלמד לנהל שיחת התאמה, למכור מתוך שירות אמיתי (לא מתוך לחץ), להתמודד עם התנגדויות, ונתרגל את זה בפועל.</p>
+        <p class="takeaway"><b>תצאי עם:</b> ביטחון אמיתי בשיחת מכירה, בלי להרגיש שאת “דוחפת”, ובלי לוותר על הכסף שמגיע לך.</p>
+      </div>
+    </details>
+  </div>
+
+  <!-- מודולה 6 -->
+  <div class="module">
+    <div class="module-head">
+      <div class="module-num">6</div>
+      <h2><span class="label">מודולה שישית</span>לצאת החוצה, קבוצות, זום ועוד: להתאהב בחיים שבניתי</h2>
+    </div>
+
+    <details class="row"><summary><span class="n">21</span><span class="date">08.03.2027</span><span class="title">מעבר למה שאני יכולה בכלל לדמיין כרגע - להתאהב בהנחיית קבוצות</span><span class="chev">›</span></summary>
+      <div class="body">
+        <p>מליווי אישי אחד-על-אחד להנחיית קבוצה שלמה, זו קפיצה, וגם היא ניתנת ללמידה. במפגש הזה נלמד לבנות סדנאות וקורסים, לנהל קבוצה ולהוביל תהליך קבוצתי שלם.</p>
+        <p class="takeaway"><b>תצאי עם:</b> היכולת להוביל לא רק לקוחה אחת, אלא חדר שלם.</p>
+      </div>
+    </details>
+
+    <details class="row"><summary><span class="n">22</span><span class="date">15.03.2027</span><span class="title">סופרוויז'ן + הרצאות זום</span><span class="chev">›</span></summary>
+      <div class="body">
+        <p>מפגש שלם המוקדש לך ולמקרים שכבר עולים אצלך בפועל. נציג מקרים אמיתיים, ננתח אותם יחד, נתרגל חשיבה טיפולית וחשיבה עסקית במקביל, ונבין מה ההתערבות הנכונה הבאה בכל מקרה. בנוסף נתכונן יחד לכנס הזום, נלמד איך לבנות הרצאה מנצחת ומרתקת, כזו שגורמת לקהל להמשיך לעקוב אחריך.</p>
+        <p class="takeaway"><b>תצאי עם:</b> ליווי צמוד על העבודה האמיתית שלך, ומבנה מנצח להרצאת זום.</p>
+      </div>
+    </details>
+
+    <div class="break">
+      <span class="date">22.03.2027</span>
+      <span class="txt">אין מפגש. פורים.</span>
+    </div>
+
+    <details class="row"><summary><span class="n">23</span><span class="date">29.03.2027</span><span class="title">“שרה, אל תעזבי אותי לבד בעולם!” - יוצאות לאט יד ביד ליום סטאז' פתוח לקהל</span><span class="chev">›</span></summary>
+      <div class="body">
+        <p>יום שלם של עבודה עם נשים אמיתיות מהקהל הרחב, עם ליווי צמוד, לא לבד. תעבדי, תקבלי משוב מיידי, ותעבדי את מה שעלה, הכל באותו יום.</p>
+        <p class="takeaway"><b>תצאי עם:</b> ניסיון מעשי אמיתי מתוך חוויה של יום שלם עם אורחות שמקבלות טעימה מהניסיון והידע שצברת לאורך כל ההכשרה.</p>
+      </div>
+    </details>
+
+    <details class="row"><summary><span class="n">24</span><span class="date">05.04.2027</span><span class="title">מי זאת?! עפה על האישה שנהייתי</span><span class="chev">›</span></summary>
+      <div class="body">
+        <p>סיכום שלם של כל הדרך שעברת. נבנה תוכנית ל-90 הימים הבאים, תציגי מקרה אחד לבחירתך, ונעבור יחד טקס סיום וחלוקת תעודות.</p>
+        <p class="takeaway"><b>תצאי עם:</b> תעודת הסמכה כמטפלת עסקית בשיטת Inside Out, ותוכנית ברורה למה שקורה אחרי ההכשרה, לא רק תעודה על הקיר.</p>
+      </div>
+    </details>
+  </div>
+
+  <p class="closing">
+    המפגש האחרון: <b>05.04.2027</b><br>
+    סיכום שלם של כל הדרך, ובניית התוכנית הלאה.
+  </p>
+
+</div>
+
+<script>
+(function(){
+  var btn=document.querySelector('.toggle-all');
+  var rows=[].slice.call(document.querySelectorAll('details.row'));
+  btn.addEventListener('click',function(){
+    var anyClosed=rows.some(function(r){return !r.open;});
+    rows.forEach(function(r){r.open=anyClosed;});
+    btn.textContent=anyClosed?'לסגור את כל המפגשים':'לפתוח את כל המפגשים';
+  });
+  rows.forEach(function(r){
+    r.addEventListener('toggle',function(){
+      var allOpen=rows.every(function(x){return x.open;});
+      btn.textContent=allOpen?'לסגור את כל המפגשים':'לפתוח את כל המפגשים';
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
