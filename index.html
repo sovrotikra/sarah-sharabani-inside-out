@@ -248,7 +248,7 @@ p{margin:0 0 14px;}
 .callout p{color:rgba(255,255,255,.88);margin:0;}
 
 /* practical details */
-.detail-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:30px;}
+.detail-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:1fr;gap:16px;margin-top:30px;}
 @media (max-width:760px){.detail-grid{grid-template-columns:1fr 1fr;}}
 .detail-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:22px 18px;text-align:center;box-shadow:var(--shadow-sm);}
 .detail-card .label{font-size:12.5px;color:var(--ink-soft);margin-bottom:6px;}
@@ -765,11 +765,12 @@ body{padding-bottom:76px;}
     </div>
     <div class="detail-grid">
       <div class="detail-card"><div class="label">פתיחה</div><div class="value">12.10.2026</div></div>
-      <div class="detail-card"><div class="label">מיקום</div><div class="value">בית שמש</div></div>
+      <div class="detail-card"><div class="label">מיקום</div><div class="value">בית שמש<span style="display:block;font-family:'Assistant',sans-serif;font-weight:600;font-size:12.5px;color:var(--ink-soft);margin-top:3px;">ו-2 מפגשים בזום</span></div></div>
       <div class="detail-card"><div class="label">ימי לימוד</div><div class="value">ימי שני</div></div>
       <div class="detail-card"><div class="label">משך ההכשרה</div><div class="value">6 חודשים</div></div>
     </div>
-    <div style="text-align:center;margin-top:26px;">
+    <p style="text-align:center;margin-top:20px;font-size:15.5px;line-height:1.7;color:var(--ink-soft);">22 מפגשים פרונטליים בבית שמש. שני מפגשים נוספים מתקיימים בזום, כל אחד עם <strong style="color:var(--ink);">מרצה אורח</strong> בתחומו.</p>
+    <div style="text-align:center;margin-top:22px;">
       <a class="btn btn-outline" href="schedule.html" target="_blank" rel="noopener">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8l-5-5Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M14 3v5h5M9 13h6M9 17h4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
         לצפייה בסילבוס המלא
