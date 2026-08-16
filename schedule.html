@@ -134,6 +134,18 @@ h1,h2{font-family:'Heebo',sans-serif;margin:0;color:var(--ink);font-weight:800;l
   color:var(--teal)!important;font-size:15px!important;font-weight:600;
 }
 .zoom-line svg{flex:none;}
+.guest{
+  display:flex;align-items:flex-start;gap:14px;
+  background:#fff;border:1px solid var(--line);border-radius:14px;
+  padding:14px 16px;margin-top:12px;
+}
+.guest img{
+  width:70px;height:70px;border-radius:50%;object-fit:cover;flex:none;
+  border:2px solid var(--coral-tint);
+}
+.guest h4{font-family:'Heebo',sans-serif;font-weight:800;font-size:16.5px;margin:0 0 2px;color:var(--ink);}
+.guest .tag{font-family:'Heebo',sans-serif;font-weight:700;font-size:13.5px;color:var(--coral-deep);margin:0 0 7px;}
+.guest .bio{font-size:13.5px;line-height:1.65;color:var(--ink-soft);margin:0;}
 .legend{
   display:flex;align-items:center;justify-content:center;gap:7px;
   font-size:13.5px;color:var(--ink-soft);margin:0 0 16px;
@@ -252,7 +264,15 @@ h1,h2{font-family:'Heebo',sans-serif;margin:0;color:var(--ink);font-weight:800;l
 
     <details class="row"><summary><span class="n">2</span><span class="date">19.10.2026</span><span class="title">לא סתם עברתי את זה - לקבל את כל החלקים שבי<span class="zoom-badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="none"><rect x="2" y="6" width="13" height="12" rx="3" fill="currentColor"/><path d="M17 10.5l4-2.4v7.8l-4-2.4z" fill="currentColor"/></svg>זום</span></span><span class="chev">›</span></summary>
       <div class="body">
-        <p class="zoom-line"><svg width="17" height="17" viewBox="0 0 24 24" fill="none"><rect x="2" y="6" width="13" height="12" rx="3" fill="currentColor"/><path d="M17 10.5l4-2.4v7.8l-4-2.4z" fill="currentColor"/></svg>המפגש מתקיים בזום, עם מרצה אורח.</p>
+        <p class="zoom-line"><svg width="17" height="17" viewBox="0 0 24 24" fill="none"><rect x="2" y="6" width="13" height="12" rx="3" fill="currentColor"/><path d="M17 10.5l4-2.4v7.8l-4-2.4z" fill="currentColor"/></svg>המפגש מתקיים בזום, עם מרצה אורחת.</p>
+        <div class="guest">
+          <img src="assets/guest-galit.jpg" alt="גלית סרברניק-חי" loading="lazy">
+          <div>
+            <h4>גלית סרברניק-חי</h4>
+            <p class="tag">לרתום את הטראומה ולהמשיך בחיים</p>
+            <p class="bio">עו”ס קלינית, פסיכותרפיסטית ומוסמכת לטיפול בשיטת SE. בעלת 20 שנות ניסיון כמטפלת, מרצה בינלאומית ומנחת סדנאות בשיטה שפיתחה: טיפול קצר-מועד סומאטי בטראומה, דיאלוג עם הגוף (SSTT©).</p>
+          </div>
+        </div>
         <p>כל מה שעברת, הטראומות, הקשיים, הדפוסים שנוצרו כדי להגן עלייך, לא קרו במקרה, ולא צריכים להיעלם כדי שתצליחי. במפגש הזה נלמד להבין מה זו טראומה מנקודת מבט של מערכת העצבים (לא רק כסיפור), נכיר את מנגנוני ההישרדות שהתפתחו אצלך, ונפגוש את החלקים הפנימיים השונים שלך, לא כדי להילחם בהם, אלא כדי לקבל אותם.</p>
         <p class="takeaway"><b>תצאי עם:</b> הבנה עמוקה של מנגנוני הטראומה ומערכת העצבים שלך, הבסיס לכל עבודה טיפולית שתעשי מכאן והלאה, גם עם עצמך וגם עם לקוחות.</p>
       </div>
@@ -417,6 +437,14 @@ h1,h2{font-family:'Heebo',sans-serif;margin:0;color:var(--ink);font-weight:800;l
     <details class="row"><summary><span class="n">20</span><span class="date">01.03.2027</span><span class="title">אני מעולה בלתת בהתנדבות - להתאהב במכירות<span class="zoom-badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="none"><rect x="2" y="6" width="13" height="12" rx="3" fill="currentColor"/><path d="M17 10.5l4-2.4v7.8l-4-2.4z" fill="currentColor"/></svg>זום</span></span><span class="chev">›</span></summary>
       <div class="body">
         <p class="zoom-line"><svg width="17" height="17" viewBox="0 0 24 24" fill="none"><rect x="2" y="6" width="13" height="12" rx="3" fill="currentColor"/><path d="M17 10.5l4-2.4v7.8l-4-2.4z" fill="currentColor"/></svg>המפגש מתקיים בזום, עם מרצה אורח.</p>
+        <div class="guest">
+          <img src="assets/guest-adar.jpg" alt="אדר מרלינסקי" loading="lazy" style="object-position:29% 22%;">
+          <div>
+            <h4>אדר מרלינסקי</h4>
+            <p class="tag">מכירה שיוצרת שינוי</p>
+            <p class="bio">מכשיר בעלי עסקים להגדיל מכירות בעזרת נוסחה שהופכת את תהליך המכירה לטבעי לגמרי, בלי לחץ ובלי מניפולציות על הלקוחות.</p>
+          </div>
+        </div>
         <p>את יודעת לתת, השאלה היא אם את יודעת לבקש בתמורה. במפגש הזה נלמד לנהל שיחת התאמה, למכור מתוך שירות אמיתי (לא מתוך לחץ), להתמודד עם התנגדויות, ונתרגל את זה בפועל.</p>
         <p class="takeaway"><b>תצאי עם:</b> ביטחון אמיתי בשיחת מכירה, בלי להרגיש שאת “דוחפת”, ובלי לוותר על הכסף שמגיע לך.</p>
       </div>

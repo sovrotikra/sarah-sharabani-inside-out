@@ -253,6 +253,14 @@ p{margin:0 0 14px;}
 .detail-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:22px 18px;text-align:center;box-shadow:var(--shadow-sm);}
 .detail-card .label{font-size:12.5px;color:var(--ink-soft);margin-bottom:6px;}
 .detail-card .value{font-family:'Heebo',sans-serif;font-weight:800;font-size:18px;color:var(--teal);}
+.guest-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:26px;}
+@media (max-width:720px){.guest-grid{grid-template-columns:1fr;}}
+.guest-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:26px 22px;text-align:center;box-shadow:var(--shadow-sm);}
+.guest-photo{width:112px;height:112px;border-radius:50%;object-fit:cover;display:block;margin:0 auto 14px;border:3px solid var(--coral-tint);}
+.guest-meet{display:inline-block;background:var(--teal-tint);color:var(--teal);font-family:'Heebo',sans-serif;font-weight:700;font-size:12px;border-radius:999px;padding:4px 12px;margin-bottom:10px;}
+.guest-card h4{font-family:'Heebo',sans-serif;font-weight:800;font-size:20px;margin:0 0 4px;color:var(--ink);}
+.guest-tag{font-family:'Heebo',sans-serif;font-weight:700;font-size:15px;color:var(--coral-deep);margin:0 0 12px;}
+.guest-quote{font-size:14.5px;line-height:1.7;color:var(--ink-soft);margin:0;text-align:start;}
 .price-band{margin-top:24px;background:var(--ink);color:#fff;border-radius:var(--radius-lg);padding:clamp(20px,4vw,38px);display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:16px 20px;text-align:center;}
 .price-band .amount{flex:1 1 180px;min-width:0;font-family:'Heebo',sans-serif;font-size:clamp(24px,4vw,34px);font-weight:900;color:var(--peach);}
 .price-band .amount span{font-size:15px;color:rgba(255,255,255,.7);font-weight:500;display:block;margin-bottom:4px;}
@@ -816,7 +824,7 @@ body{padding-bottom:76px;}
     </div>
     <div class="struct-block">
       <span class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="17" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M3 9h18M8 2v4M16 2v4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span>
-      <div><h4>שיעורים פרונטליים</h4><p>השיעורים יתקיימו בבית שמש בימי שני, בהתאם ללו"ז שיתפרסם בהמשך.</p></div>
+      <div><h4>שיעורים פרונטליים</h4><p>22 מפגשים בבית שמש בימי שני, ועוד 2 מפגשים בזום עם מרצים אורחים. <a href="schedule.html" target="_blank" rel="noopener" style="color:var(--coral-deep);font-weight:700;">כל התאריכים כאן</a>.</p></div>
     </div>
     <div class="struct-block featured">
       <span class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M15 8a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" stroke="currentColor" stroke-width="1.8"/><path d="M4 20c0-3.9 3.6-7 8-7s8 3.1 8 7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span>
@@ -829,6 +837,36 @@ body{padding-bottom:76px;}
     <div class="struct-block">
       <span class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M21 11.5a8.4 8.4 0 0 1-9.8 8.3c-1.3-.2-2-.3-2.6-.1L4 21l1.2-3.2c.2-.6 0-1.2-.2-1.7A8.5 8.5 0 1 1 21 11.5Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></span>
       <div><h4>תרגול וליווי בין המפגשים</h4><p>קבוצת ווטסאפ עם תרגילים, משימות ומדיטציות קצרות. לקראת הסיום - תקופת סטאז' מקצועית עם ליווי צמוד וקבלת משוב.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- מרצים אורחים -->
+<section class="alt reveal">
+  <div class="container-narrow">
+    <div class="section-head center">
+      <span class="eyebrow orange">שני מפגשים, שני מומחים</span>
+      <h2 class="h2">מרצים אורחים</h2>
+      <p class="lead">בשני מפגשים בזום נארח מומחים בתחומם, כל אחד בנושא שהוא הדבר שהוא עושה הכי טוב.</p>
+    </div>
+    <div class="guest-grid">
+
+      <div class="guest-card">
+        <img class="guest-photo" src="assets/guest-galit.jpg" alt="גלית סרברניק-חי" loading="lazy">
+        <span class="guest-meet">מפגש 2 · 19.10.2026 · בזום</span>
+        <h4>גלית סרברניק-חי</h4>
+        <p class="guest-tag">לרתום את הטראומה ולהמשיך בחיים</p>
+        <p class="guest-quote">“עו”ס קלינית, פסיכותרפיסטית ומוסמכת לטיפול בשיטת SE. בעלת 20 שנות ניסיון כמטפלת, מרצה בינלאומית ומנחת סדנאות בשיטה שפיתחתי: טיפול קצר-מועד סומאטי בטראומה, דיאלוג עם הגוף (SSTT©).”</p>
+      </div>
+
+      <div class="guest-card">
+        <img class="guest-photo" src="assets/guest-adar.jpg" alt="אדר מרלינסקי" loading="lazy" style="object-position:29% 22%;">
+        <span class="guest-meet">מפגש 20 · 01.03.2027 · בזום</span>
+        <h4>אדר מרלינסקי</h4>
+        <p class="guest-tag">מכירה שיוצרת שינוי</p>
+        <p class="guest-quote">“אם נדבר תכל'ס, המטרה שלי היא להכשיר בעלי עסקים בדיוק כמוכם להגדיל את כמות המכירות באמצעות אותה נוסחה שתאפשר לכם להפוך את תהליך המכירה לטבעי לגמרי, ללא צורך להשתמש בלחץ או מניפולציות על הלקוחות, וכך לקצר את תהליך המכירה ולהפוך אותו ליעיל ורווחי יותר עבורכם.”</p>
+      </div>
+
     </div>
   </div>
 </section>
