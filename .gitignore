@@ -1,1 +1,14 @@
-﻿index.orig.html
+index.orig.html
+
+
+# secrets - never commit
+*token*.txt
+*.token
+.env
+.env.*
+vercel-analytics.json
+
+
+# local analytics - private traffic data
+dashboard.html
+tools/
