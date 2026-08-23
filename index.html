@@ -111,7 +111,10 @@ section{padding:clamp(56px,9vw,104px) 0;position:relative;z-index:1;}
 section.alt{background:var(--paper-alt);}
 .section-head{max-width:700px;margin:0 0 clamp(28px,4vw,44px);}
 .section-head.center{margin-inline:auto;text-align:center;}
-.h1{font-size:clamp(34px,6vw,60px);line-height:1.12;}
+/* גודל הכותרת נגזר מהדרישה ש"להתאהב מחדש בעסק שלך" יישב על שורה אחת.
+   שני משטרים, כי ב-900px הפריסה עוברת מטור אחד לשני טורים. */
+.h1{font-size:clamp(23px,7.4vw,48px);line-height:1.12;}
+@media (min-width:900px){.h1{font-size:clamp(40px,4.3vw,54px);}}
 .h2{font-size:clamp(26px,4.2vw,40px);line-height:1.2;}
 .h3{font-size:clamp(19px,2.6vw,23px);line-height:1.3;}
 .lead{font-size:clamp(17px,2vw,20px);color:var(--ink-soft);margin-top:14px;}
@@ -122,7 +125,7 @@ p{margin:0 0 14px;}
   padding-top:clamp(48px,8vw,80px);overflow:hidden;position:relative;
   background-image:url('assets/hero-watercolor.jpg');background-size:cover;background-position:top center;background-repeat:no-repeat;
 }
-.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(28px,5vw,60px);align-items:center;grid-template-areas:"eyebrow eyebrow" "text visual";}
+.hero-grid{display:grid;grid-template-columns:1.28fr .72fr;gap:clamp(28px,5vw,60px);align-items:center;grid-template-areas:"eyebrow eyebrow" "text visual";}
 .hero-eyebrow-row{grid-area:eyebrow;}
 .hero-visual{grid-area:visual;}
 .hero-text{grid-area:text;}
@@ -175,7 +178,7 @@ p{margin:0 0 14px;}
 @media (max-width:640px){.pain-list{grid-template-columns:1fr;}}
 .pain-item{display:flex;gap:10px;align-items:flex-start;font-size:15.5px;color:var(--ink);background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px 14px;}
 .pain-item .dot{flex:none;width:8px;height:8px;border-radius:50%;background:var(--coral);margin-top:7px;}
-.turn{font-family:'Heebo',sans-serif;font-weight:800;font-size:clamp(20px,3vw,26px);text-align:center;max-width:600px;margin:40px auto 0;line-height:1.4;}
+.turn{font-family:'Heebo',sans-serif;font-weight:800;font-size:clamp(20px,3vw,26px);text-align:center;max-width:600px;margin:40px auto 0;line-height:1.85;}
 .turn .accent{color:var(--coral);}
 
 /* feedback screenshots */
@@ -196,6 +199,10 @@ p{margin:0 0 14px;}
 .pill:nth-child(3n+1){border-color:rgba(230,62,112,.35);}
 .pill:nth-child(3n+2){border-color:rgba(27,143,137,.35);}
 .pill:nth-child(3n+3){border-color:rgba(247,169,74,.45);}
+
+/* סרטון ההכשרה, מיד מתחת לכותרת */
+.intro-video{padding-top:clamp(26px,3.6vw,40px);padding-bottom:clamp(30px,4vw,48px);}
+.intro-video-title{text-align:center;font-family:'Heebo',sans-serif;font-weight:800;font-size:clamp(17px,2.2vw,20px);margin-bottom:16px;}
 
 .infographic-wrap{margin-top:36px;border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-md);border:1px solid var(--line);}
 
@@ -319,16 +326,29 @@ p{margin:0 0 14px;}
 .video-testi-name{margin:10px 0 0;text-align:center;font-size:13px;color:var(--ink-soft);line-height:1.4;}
 .video-testi-name b{color:var(--coral-deep);}
 @media (max-width:560px){.scroll-row > .video-frame,.video-testi{flex:0 0 min(64vw,232px);}}
+/* עדות בודדת שמשובצת בין הקטעים, כדי שההוכחה תלווה את כל הדף
+   ולא תתרכז רק בגלריה אחת בסוף. */
+.testi-inline{padding:clamp(34px,5vw,54px) 0;}
+.testi-inline .lead-in{text-align:center;font-family:'Heebo',sans-serif;font-weight:800;font-size:clamp(16px,2.1vw,19px);margin:0 auto 18px;max-width:520px;line-height:1.5;}
+.testi-shot{position:relative;display:block;max-width:340px;margin:0 auto;border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow-md);background:#fff;max-height:520px;}
+.testi-shot img{width:100%;height:auto;display:block;}
+.testi-shot::after{content:"";position:absolute;inset-inline:0;bottom:0;height:110px;background:linear-gradient(to bottom,rgba(255,255,255,0) 0%,#fff 82%);pointer-events:none;}
+.testi-shot .more{position:absolute;bottom:13px;inset-inline:0;text-align:center;font-family:'Heebo',sans-serif;font-weight:700;font-size:13.5px;color:var(--coral-deep);z-index:2;}
+.testi-inline .credit{text-align:center;font-size:13.5px;color:var(--ink-soft);margin:14px 0 0;}
+.testi-inline .credit b{color:var(--coral-deep);}
+
 /* vertical testimonial marquee columns */
-.testi-columns{display:flex;justify-content:center;gap:16px;margin-top:14px;max-height:380px;overflow:hidden;-webkit-mask-image:linear-gradient(to bottom,transparent,#000 12%,#000 88%,transparent);mask-image:linear-gradient(to bottom,transparent,#000 12%,#000 88%,transparent);}
-.testi-col{flex:1 1 0;max-width:170px;overflow:hidden;}
+.testi-columns{display:flex;justify-content:center;gap:16px;margin-top:14px;max-height:560px;overflow:hidden;-webkit-mask-image:linear-gradient(to bottom,transparent,#000 12%,#000 88%,transparent);mask-image:linear-gradient(to bottom,transparent,#000 12%,#000 88%,transparent);}
+.testi-col{flex:1 1 0;max-width:300px;overflow:hidden;}
 .testi-col:nth-child(2),.testi-col:nth-child(3){display:none;}
 @media (min-width:640px){.testi-col:nth-child(2){display:block;}}
 @media (min-width:900px){.testi-col:nth-child(3){display:block;}}
 .testi-track{display:flex;flex-direction:column;gap:16px;animation:testiScroll linear infinite;}
 .testi-col:hover .testi-track{animation-play-state:paused;}
-.testi-card{border-radius:16px;overflow:hidden;box-shadow:var(--shadow-sm);border:1px solid var(--line);aspect-ratio:3/4;flex:none;background:#fff;}
-.testi-card img{width:100%;height:100%;object-fit:contain;display:block;}
+/* בלי aspect-ratio קבוע: הצילומים כאן הם הודעות וואטסאפ בפרופורציות שונות,
+   וכפייה ל-3/4 עם contain הקטינה אותם עד שהטקסט לא היה קריא. */
+.testi-card{border-radius:16px;overflow:hidden;box-shadow:var(--shadow-sm);border:1px solid var(--line);flex:none;background:#fff;}
+.testi-card img{width:100%;height:auto;display:block;}
 @keyframes testiScroll{from{transform:translateY(0);}to{transform:translateY(-50%);}}
 @media (prefers-reduced-motion:reduce){.testi-track{animation:none;}}
 
@@ -396,7 +416,7 @@ body{padding-bottom:76px;}
 <header id="top" class="hero">
   <div class="hero-grid container">
     <div class="hero-eyebrow-row">
-      <span class="eyebrow">הכשרת מטפלות עסקיות בשיטת Inside Out</span>
+      <span class="eyebrow">למטפלות, מאמנות, יועצות ובעלות עסקים</span>
     </div>
     <div class="hero-visual">
       <div class="hero-photo-frame"><img src="assets/sarah-hero.jpg" alt="שרה שרבאני - מאמנת עסקית-רוחנית"></div>
@@ -430,6 +450,16 @@ body{padding-bottom:76px;}
     </div>
   </div>
 </header>
+
+<!-- INTRO VIDEO - מיד אחרי הכותרת, לבקשת הקמפיינר -->
+<section class="reveal intro-video">
+  <div class="container-narrow">
+    <p class="intro-video-title">סרטון קצר על ההכשרה:</p>
+    <div class="video-frame" style="max-width:270px;margin:0 auto;">
+      <iframe src="https://player.vimeo.com/video/1184530587?dnt=1" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+    </div>
+  </div>
+</section>
 
 <!-- העולם העסקי לא נבנה בשבילך -->
 <section class="alt reveal">
@@ -475,7 +505,19 @@ body{padding-bottom:76px;}
       <div class="pain-item"><span class="dot"></span>משעמם לך. את רוצה ללמוד משהו חדש, לגדול, להרגיש שוב שאת מתפתחת.</div>
       <div class="pain-item"><span class="dot"></span>בעלך כבר רמז שאולי כדאי שתחזרי להיות שכירה, או שתסגרי את העסק.</div>
     </div>
-    <p class="turn">אם סימנת לעצמך<br>"כן" ליותר משורה אחת - זה לא במקרה.<br>כי הבעיה כמעט אף פעם <span class="accent">לא באמת</span><br>השיווק, המחיר או התוכן. היא עמוקה יותר.<br>ואת יודעת מה הכי מפתיע?<br>הדרך מכאן הלאה היא <span class="accent">לא עוד אסטרטגיה.</span><br>היא מסע של להתאהב מחדש - בעצמך,<br>בשליחות שלך, <span class="accent">ובעסק שאת בונה.</span></p>
+    <p class="turn">אם סימנת לעצמך<br>"כן" ליותר משורה אחת - זה לא במקרה<br>כי הבעיה כמעט אף פעם <span class="accent">לא באמת</span><br>השיווק, המחיר או התוכן<br>היא עמוקה יותר<br>ואת יודעת מה הכי מפתיע?<br>הדרך מכאן הלאה היא <span class="accent">לא עוד אסטרטגיה</span><br>היא מסע של להתאהב מחדש - בעצמך,<br>בשליחות שלך, <span class="accent">ובעסק שאת בונה</span></p>
+  </div>
+</section>
+
+<!-- עדות משובצת: אחרי הכאב -->
+<section class="reveal testi-inline">
+  <div class="container-narrow">
+    <p class="lead-in">אחת מהנשים שהייתה בדיוק שם, כתבה לי את זה:</p>
+    <a class="testi-shot" href="https://images.ravpages.co.il/xsite_resources/user_content/b3/7b/64/a2/b37b64a22eda04e781e37730b5548cb4/images/17abafb58a53621b4f2351fa5a7e162b.jpg?rxc=1705555703" target="_blank" rel="noopener">
+      <img src="https://images.ravpages.co.il/xsite_resources/user_content/b3/7b/64/a2/b37b64a22eda04e781e37730b5548cb4/images/17abafb58a53621b4f2351fa5a7e162b.jpg?rxc=1705555703" loading="lazy" alt="הודעה של משתתפת בקורס">
+      <span class="more">להודעה המלאה ←</span>
+    </a>
+    <p class="credit">מתוך הודעה של משתתפת בקורס</p>
   </div>
 </section>
 
@@ -492,16 +534,6 @@ body{padding-bottom:76px;}
     <div class="feedback-grid">
       <div class="feedback-item"><img src="assets/feedback-1.jpg" alt="משוב מלקוחה" loading="lazy"></div>
       <div class="feedback-item"><img src="assets/feedback-2.jpg" alt="משוב מלקוחה" loading="lazy"></div>
-    </div>
-  </div>
-</section>
-
-<!-- INTRO VIDEO -->
-<section class="reveal" style="padding-top:0;">
-  <div class="container-narrow">
-    <p style="text-align:center;font-family:'Heebo',sans-serif;font-weight:700;font-size:16.5px;margin-bottom:16px;">וכדי שתביני איך זה בדיוק קורה - סרטון קצר על ההכשרה:</p>
-    <div class="video-frame" style="max-width:200px;margin:0 auto;">
-      <iframe src="https://player.vimeo.com/video/1184530587?dnt=1" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe>
     </div>
   </div>
 </section>
@@ -637,6 +669,18 @@ body{padding-bottom:76px;}
   </div>
 </section>
 
+<!-- עדות משובצת: אחרי שיטת הלמידה -->
+<section class="reveal testi-inline">
+  <div class="container-narrow">
+    <p class="lead-in">וכך זה נשמע מהצד השני, בסיום התהליך:</p>
+    <a class="testi-shot" href="https://images.ravpages.co.il/xsite_resources/user_content/cp_new_production/00/54/e2/f5/0054e2f54c640fd0017d351bb30ad592/images/242cb38b151a6e81f9fe37d9a39ae459.jpg?rxc=1705555703" target="_blank" rel="noopener">
+      <img src="https://images.ravpages.co.il/xsite_resources/user_content/cp_new_production/00/54/e2/f5/0054e2f54c640fd0017d351bb30ad592/images/242cb38b151a6e81f9fe37d9a39ae459.jpg?rxc=1705555703" loading="lazy" alt="הודעה של משתתפת בסיום התהליך">
+      <span class="more">להודעה המלאה ←</span>
+    </a>
+    <p class="credit">מתוך הודעה של משתתפת, בסיום התהליך</p>
+  </div>
+</section>
+
 <!-- הסיפור האישי -->
 <section class="alt reveal">
   <div class="container-narrow">
@@ -745,6 +789,17 @@ body{padding-bottom:76px;}
   </div>
 </section>
 
+<!-- עדות משובצת: אחרי מה יקרה לך במהלך ההכשרה -->
+<section class="reveal testi-inline">
+  <div class="container-narrow">
+    <p class="lead-in">שרון עברה את זה בעצמה:</p>
+    <div class="video-frame" style="max-width:232px;margin:0 auto;">
+      <iframe src="https://player.vimeo.com/video/1092072974?dnt=1" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+    </div>
+    <p class="credit"><b>שרון</b> · מאסטר NLP ויועצת פיננסית</p>
+  </div>
+</section>
+
 <!-- למי מתאים -->
 <section class="reveal">
   <div class="container-narrow">
@@ -786,9 +841,8 @@ body{padding-bottom:76px;}
         לצפייה בסילבוס המלא
       </a>
     </div>
-    <p style="text-align:center;margin-top:26px;font-size:16px;line-height:1.6;">המחיר המלא של ההכשרה הוא <strong>19,400 ₪</strong>.<br><span style="font-family:'Heebo',sans-serif;font-weight:800;font-size:17px;color:var(--coral-deep);">זה לא המחיר שתשלמי אם תסגרי מקום עכשיו.</span></p>
-    <div class="price-band" style="margin-top:12px;">
-      <div class="amount"><span>מחיר הרשמה מוקדמת עד 22.8</span>17,400 ₪<span style="display:block;margin-top:8px;font-size:12.5px;color:rgba(255,255,255,.6);font-weight:400;line-height:1.6;">עד 15.9: 18,400 ₪ · מ-16.9: 19,400 ₪</span></div>
+    <div class="price-band" style="margin-top:26px;">
+      <div class="amount"><span>המחזור נפתח ב-12.10.2026</span>ההרשמה פתוחה</div>
       <a class="btn btn-primary" href="#apply">להגשת מועמדות</a>
     </div>
     <p style="text-align:center;margin-top:16px;font-size:15px;line-height:1.65;"><strong>מספר המקומות מוגבל.</strong> ההכשרה בנויה על ליווי אישי לכל משתתפת, ולכן הקבוצה לא תיפתח מעבר לגודל שמאפשר את זה.</p>
@@ -913,7 +967,6 @@ body{padding-bottom:76px;}
     <button class="scroll-nav next" type="button" aria-label="לעדויות הבאות"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M15 5 8 12l7 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
     <div class="scroll-row">
       <div class="video-testi"><div class="video-frame"><iframe src="https://player.vimeo.com/video/1149309419?dnt=1" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe></div><p class="video-testi-name"><b>נחמי</b> · מטפלת ברפואה סינית</p></div>
-      <div class="video-testi"><div class="video-frame"><iframe src="https://player.vimeo.com/video/1092072974?dnt=1" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe></div><p class="video-testi-name"><b>שרון</b> · מאסטר NLP ויועצת פיננסית</p></div>
       <div class="video-testi"><div class="video-frame"><iframe src="https://player.vimeo.com/video/1092345558?dnt=1" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe></div><p class="video-testi-name"><b>רייזי</b> · מנחת סדנאות היומן הויזואלי</p></div>
       <div class="video-testi"><div class="video-frame"><iframe src="https://player.vimeo.com/video/1149309098?dnt=1" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe></div><p class="video-testi-name"><b>נועה</b> · מלווה נשים בתהליכי ריפוי</p></div>
       <div class="video-testi"><div class="video-frame"><iframe src="https://player.vimeo.com/video/1092346897?dnt=1" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe></div><p class="video-testi-name"><b>שיר</b> · מטפלת רגשית</p></div>
@@ -944,7 +997,7 @@ body{padding-bottom:76px;}
     <p style="text-align:center;color:var(--ink-soft);font-size:15px;margin-top:34px;">נשים שעברו אצלי תהליכים וקורסים שונים משתפות:</p>
     <div class="testi-columns">
       <div class="testi-col">
-        <div class="testi-track" style="animation-duration:26s;">
+        <div class="testi-track" style="animation-duration:48s;">
           <div class="testi-card"><img src="https://images.ravpages.co.il/xsite_resources/user_content/b3/7b/64/a2/b37b64a22eda04e781e37730b5548cb4/images/17abafb58a53621b4f2351fa5a7e162b.jpg?rxc=1705555703" loading="lazy" alt="עדות"></div>
           <div class="testi-card"><img src="https://images.ravpages.co.il/xsite_resources/user_content/b3/7b/64/a2/b37b64a22eda04e781e37730b5548cb4/images/15240577c1d35005b863cc7ecfa83c12.jpg?rxc=1705555703" loading="lazy" alt="עדות"></div>
           <div class="testi-card"><img src="https://images.ravpages.co.il/xsite_resources/user_content/b3/7b/64/a2/b37b64a22eda04e781e37730b5548cb4/images/bf96c5832c99fda61acd4aa60f86d439.jpg?rxc=1705555703" loading="lazy" alt="עדות"></div>
@@ -958,7 +1011,7 @@ body{padding-bottom:76px;}
         </div>
       </div>
       <div class="testi-col">
-        <div class="testi-track" style="animation-duration:32s;">
+        <div class="testi-track" style="animation-duration:58s;">
           <div class="testi-card"><img src="https://images.ravpages.co.il/xsite_resources/user_content/b3/7b/64/a2/b37b64a22eda04e781e37730b5548cb4/images/1645da3dd2cb07232101c3a5ee966682.jpg?rxc=1705555703" loading="lazy" alt="עדות"></div>
           <div class="testi-card"><img src="https://images.ravpages.co.il/xsite_resources/user_content/b3/7b/64/a2/b37b64a22eda04e781e37730b5548cb4/images/7bfd7f231136c5d73c84aeeb78d5d05c.jpg?rxc=1705555703" loading="lazy" alt="עדות"></div>
           <div class="testi-card"><img src="https://images.ravpages.co.il/xsite_resources/user_content/b3/7b/64/a2/b37b64a22eda04e781e37730b5548cb4/images/60d29ec2c16c659641d1c793a90647dd.jpg?rxc=1705555703" loading="lazy" alt="עדות"></div>
@@ -972,7 +1025,7 @@ body{padding-bottom:76px;}
         </div>
       </div>
       <div class="testi-col">
-        <div class="testi-track" style="animation-duration:29s;">
+        <div class="testi-track" style="animation-duration:52s;">
           <div class="testi-card"><img src="https://images.ravpages.co.il/xsite_resources/user_content/cp_new_production/00/54/e2/f5/0054e2f54c640fd0017d351bb30ad592/images/89947eb98d19b6374287b882dd6637cb.png?rxc=1705555703" loading="lazy" alt="עדות"></div>
           <div class="testi-card"><img src="https://images.ravpages.co.il/xsite_resources/user_content/cp_new_production/00/54/e2/f5/0054e2f54c640fd0017d351bb30ad592/images/09804a998a5fb1f16ab41c49675dc066.png?rxc=1705555703" loading="lazy" alt="עדות"></div>
           <div class="testi-card"><img src="https://images.ravpages.co.il/xsite_resources/user_content/cp_new_production/00/54/e2/f5/0054e2f54c640fd0017d351bb30ad592/images/787f0777a445b557429ababc17429268.jpg?rxc=1705555703" loading="lazy" alt="עדות"></div>
@@ -1059,7 +1112,7 @@ body{padding-bottom:76px;}
     </details>
     <details class="faq">
       <summary>מה עלות ההכשרה ואילו אפשרויות תשלום יש?<span class="plus">+</span></summary>
-      <div class="faq-body">המחיר המלא של ההכשרה הוא 19,400 ₪, ויש שני מחירי הרשמה מוקדמת: עד ה-22.8 - 17,400 ₪, ועד ה-15.9 - 18,400 ₪. ניתן לחלק את הסכום לאפשרויות תשלום נוחות. ההרשמה מותנית בראיון קבלה אישי והתאמה הדדית, כדי לשמור על קבוצה איכותית, מחויבת ועמוקה. פרטי התשלום המדויקים נמסרים באופן אישי במהלך הראיון - לתיאום, כתבי לנו בוואטסאפ המשרד.</div>
+      <div class="faq-body">פרטי העלות ואפשרויות התשלום נמסרים באופן אישי במהלך ראיון הקבלה. ניתן לחלק את התשלום לתשלומים נוחים. ההרשמה מותנית בראיון קבלה אישי והתאמה הדדית, כדי לשמור על קבוצה איכותית, מחויבת ועמוקה.</div>
     </details>
   </div>
 </section>
