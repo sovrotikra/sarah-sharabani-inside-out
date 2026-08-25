@@ -275,9 +275,6 @@ section.alt{background:var(--paper-alt);}
 .mod-lessons{gap:15px;}
 
 
-.infographic{margin:30px 0 0;border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow-md);background:#fff;}
-.infographic img{width:100%;height:auto;display:block;}
-.infographic figcaption{padding:14px 18px;font-size:14.5px;line-height:1.6;color:var(--ink-soft);text-align:center;}
 
 /* ── בונוסים ────────────────────────────────────────────────── */
 .bonus-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
@@ -444,6 +441,29 @@ section{counter-reset:sb;}
   font-family:'Heebo',system-ui,sans-serif;font-weight:800;font-size:15px;
   display:flex;align-items:center;justify-content:center;
 }
+
+/* ── תמונות הסיפור האישי ─────────────────────────────────── */
+.story-photo{border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-sm);border:1px solid var(--line);}
+.story-photo img{width:100%;height:100%;object-fit:cover;}
+.story-photo-caption{text-align:center;font-size:13.5px;color:var(--ink-soft);margin-top:10px;}
+.photo-row{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:26px;}
+.photo-row.two{grid-template-columns:repeat(2,1fr);max-width:420px;margin-inline:auto;}
+.photo-row .story-photo{aspect-ratio:1/1;}
+.photo-row{grid-template-columns:repeat(3,1fr);gap:8px;}
+.quote-block{background:var(--coral-tint);border-radius:var(--radius);padding:26px 28px;margin:30px 0;position:relative;}
+.quote-block em{font-style:normal;font-weight:700;color:var(--coral-deep);font-family:'Heebo',sans-serif;font-size:clamp(16px,2vw,18px);line-height:1.5;}
+@media (max-width:520px){.photo-row{grid-template-columns:repeat(3,1fr);gap:8px;}}
+
+
+/* עדות בודדת משובצת בין הקטעים, כדי שההוכחה תלווה את כל הדף */
+.testi-spot{padding:clamp(32px,5vw,52px) 0;}
+.spot-lead{text-align:center;font-family:'Heebo',system-ui,sans-serif;font-weight:800;font-size:clamp(16px,2.1vw,19px);letter-spacing:-.012em;margin:0 auto 18px;max-width:520px;line-height:1.5;}
+.spot-shot{position:relative;display:block;max-width:340px;margin:0 auto;border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow-md);background:#fff;max-height:520px;}
+.spot-shot img{width:100%;height:auto;display:block;}
+.spot-shot::after{content:"";position:absolute;inset-inline:0;bottom:0;height:110px;background:linear-gradient(to bottom,rgba(255,255,255,0) 0%,#fff 82%);pointer-events:none;}
+.spot-shot .more{position:absolute;bottom:13px;inset-inline:0;text-align:center;font-family:'Heebo',system-ui,sans-serif;font-weight:700;font-size:13.5px;color:var(--coral-deep);z-index:2;}
+.spot-credit{text-align:center;font-size:13.5px;color:var(--ink-soft);margin:14px 0 0;}
+.spot-credit b{color:var(--coral-deep);font-family:'Heebo',system-ui,sans-serif;}
 
 /* ── חשיפה הדרגתית ───────────────────────────────────────────
    הכלל: התוכן גלוי כברירת מחדל. רק אם הסקריפט רץ בהצלחה
@@ -616,8 +636,20 @@ section{counter-reset:sb;}
 </section>
 
 
+<!-- עדות משובצת -->
+<section class="alt reveal testi-spot">
+  <div class="narrow">
+    <p class="spot-lead">אחת מהנשים שהייתה בדיוק שם, כתבה לי את זה:</p>
+    <a class="spot-shot" href="https://images.ravpages.co.il/xsite_resources/user_content/b3/7b/64/a2/b37b64a22eda04e781e37730b5548cb4/images/17abafb58a53621b4f2351fa5a7e162b.jpg?rxc=1705555703" target="_blank" rel="noopener">
+      <img src="https://images.ravpages.co.il/xsite_resources/user_content/b3/7b/64/a2/b37b64a22eda04e781e37730b5548cb4/images/17abafb58a53621b4f2351fa5a7e162b.jpg?rxc=1705555703" loading="lazy" alt="הודעה של משתתפת">
+      <span class="more">להודעה המלאה ←</span>
+    </a>
+    <p class="spot-credit">מתוך הודעה של משתתפת בקורס</p>
+  </div>
+</section>
+
 <!-- ═══ 5ב. מהי מטפלת עסקית והשיטה ═══ -->
-<section class="alt reveal">
+<section class="reveal">
   <div class="narrow">
     <div class="head center">
       <span class="eyebrow teal">אז מי בעצם יודעת ללוות אותך במסע הזה?</span>
@@ -633,7 +665,7 @@ section{counter-reset:sb;}
   </div>
 </section>
 
-<section class="reveal">
+<section class="alt reveal">
   <div class="narrow">
     <div class="head">
       <span class="eyebrow orange">השיטה</span>
@@ -665,7 +697,7 @@ section{counter-reset:sb;}
 </section>
 
 <!-- ═══ 6. שבע התנגדויות ═══ -->
-<section class="alt reveal">
+<section class="reveal">
   <div class="narrow">
     <div class="head center">
       <span class="eyebrow orange">מה שנשים שואלות אותי לפני שהן נרשמות</span>
@@ -705,7 +737,7 @@ section{counter-reset:sb;}
 </section>
 
 <!-- ═══ 7. הסילבוס ═══ -->
-<section id="syllabus" class="reveal">
+<section id="syllabus" class="alt reveal">
   <div class="narrow">
     <div class="head center">
       <span class="eyebrow">שש מודולות, 24 מפגשים</span>
@@ -830,6 +862,17 @@ section{counter-reset:sb;}
   </div>
 </section>
 
+<!-- עדות משובצת -->
+<section class="reveal testi-spot">
+  <div class="narrow">
+    <p class="spot-lead">שיר עברה את זה בעצמה:</p>
+    <div class="video-frame" style="max-width:224px;margin:0 auto;">
+      <iframe src="https://player.vimeo.com/video/1092346897?dnt=1" title="עדות" allow="fullscreen" allowfullscreen loading="lazy"></iframe>
+    </div>
+    <p class="spot-credit"><b>שיר</b> · מטפלת רגשית</p>
+  </div>
+</section>
+
 <!-- ═══ 7ב. מה יקרה לך בהכשרה ═══ -->
 <section class="alt reveal">
   <div class="narrow">
@@ -876,7 +919,18 @@ section{counter-reset:sb;}
   </div>
 </section>
 
-<section class="reveal">
+<!-- עדות משובצת -->
+<section class="reveal testi-spot">
+  <div class="narrow">
+    <p class="spot-lead">רחל, מטפלת NLP, על מה שהשתנה אצלה:</p>
+    <div class="video-frame" style="max-width:224px;margin:0 auto;">
+      <iframe src="https://player.vimeo.com/video/1149314008?dnt=1" title="עדות" allow="fullscreen" allowfullscreen loading="lazy"></iframe>
+    </div>
+    <p class="spot-credit"><b>רחל</b> · מטפלת NLP</p>
+  </div>
+</section>
+
+<section class="alt reveal">
   <div class="narrow">
     <div class="head center">
       <h2 class="h2">מה תקבלי בסיום ההכשרה?</h2>
@@ -890,7 +944,7 @@ section{counter-reset:sb;}
   </div>
 </section>
 
-<section class="alt reveal">
+<section class="reveal">
   <div class="narrow">
     <div class="head center">
       <h2 class="h2">מה מיוחד בשיטת Inside Out?</h2>
@@ -916,7 +970,7 @@ section{counter-reset:sb;}
   </div>
 </section>
 
-<section class="reveal">
+<section class="alt reveal">
   <div class="narrow">
     <div class="head">
       <span class="eyebrow teal">סמכות מקצועית</span>
@@ -949,11 +1003,18 @@ section{counter-reset:sb;}
       </div>
     </div>
   </div>
-    <figure class="infographic">
-      <img src="assets/inside-out-steps.jpg" alt="חמשת השלבים לעסק נשי, מצליח ורווחי: להכיר את עצמי, לקבל את עצמי, להסכים ללכת עם זה בעולם, האומץ להיות אני, ויציאה החוצה לעולם עם העסק" loading="lazy">
-      <figcaption>חמשת השלבים שכל אישה עוברת בדרך, וגם מה שתלמדי להוביל אצל הלקוחות שלך.</figcaption>
-    </figure>
 
+</section>
+
+<!-- עדות משובצת -->
+<section class="reveal testi-spot">
+  <div class="narrow">
+    <p class="spot-lead">וגם חנה עברה את הדרך הזו:</p>
+    <div class="video-frame" style="max-width:224px;margin:0 auto;">
+      <iframe src="https://player.vimeo.com/video/1149313757?dnt=1" title="עדות" allow="fullscreen" allowfullscreen loading="lazy"></iframe>
+    </div>
+    <p class="spot-credit"><b>חנה</b> · קלינאית תקשורת</p>
+  </div>
 </section>
 
 <section class="alt reveal">
@@ -1039,8 +1100,20 @@ section{counter-reset:sb;}
   </div>
 </section>
 
+<!-- עדות משובצת -->
+<section class="alt reveal testi-spot">
+  <div class="narrow">
+    <p class="spot-lead">וכך זה נשמע מהצד השני, בסיום התהליך:</p>
+    <a class="spot-shot" href="https://images.ravpages.co.il/xsite_resources/user_content/cp_new_production/00/54/e2/f5/0054e2f54c640fd0017d351bb30ad592/images/242cb38b151a6e81f9fe37d9a39ae459.jpg?rxc=1705555703" target="_blank" rel="noopener">
+      <img src="https://images.ravpages.co.il/xsite_resources/user_content/cp_new_production/00/54/e2/f5/0054e2f54c640fd0017d351bb30ad592/images/242cb38b151a6e81f9fe37d9a39ae459.jpg?rxc=1705555703" loading="lazy" alt="הודעה של משתתפת">
+      <span class="more">להודעה המלאה ←</span>
+    </a>
+    <p class="spot-credit">מתוך הודעה של משתתפת, בסיום התהליך</p>
+  </div>
+</section>
+
 <!-- ═══ 8ב. למי מתאים ═══ -->
-<section class="alt reveal">
+<section class="reveal">
   <div class="narrow">
     <div class="head">
       <h2 class="h2">למי ההכשרה מתאימה?</h2>
@@ -1061,7 +1134,7 @@ section{counter-reset:sb;}
 </section>
 
 <!-- ═══ 9. CTA ראשון ═══ -->
-<section id="apply" class="reveal">
+<section id="apply" class="alt reveal">
   <div class="narrow">
     <div class="cta">
       <h2 class="h2">בואי נבדוק אם זו ההתאמה הנכונה</h2>
@@ -1081,6 +1154,17 @@ section{counter-reset:sb;}
         הקבוצה נשארת קטנה כי כל משתתפת מקבלת ליווי אישי.
       </p>
     </div>
+  </div>
+</section>
+
+<!-- עדות משובצת -->
+<section class="reveal testi-spot">
+  <div class="narrow">
+    <p class="spot-lead">איילה מספרת מה השתנה אצלה:</p>
+    <div class="video-frame" style="max-width:224px;margin:0 auto;">
+      <iframe src="https://player.vimeo.com/video/1208674882?dnt=1" title="עדות" allow="fullscreen" allowfullscreen loading="lazy"></iframe>
+    </div>
+    <p class="spot-credit"><b>איילה</b> · מרצה ומנחת סדנאות</p>
   </div>
 </section>
 
@@ -1113,10 +1197,6 @@ section{counter-reset:sb;}
       <button class="scroll-nav next" type="button" aria-label="לעדויות הבאות"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M15 5 8 12l7 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
       <div class="scroll-row">
         <div class="video-testi"><div class="video-frame"><iframe src="https://player.vimeo.com/video/1149309098?dnt=1" title="עדות" allow="fullscreen" allowfullscreen loading="lazy"></iframe></div><p class="name" style="text-align:center;font-size:13px;color:var(--ink-soft);margin-top:9px;"><b style="color:var(--coral-deep);">נועה</b> · מלווה נשים בתהליכי ריפוי</p></div>
-        <div class="video-testi"><div class="video-frame"><iframe src="https://player.vimeo.com/video/1092346897?dnt=1" title="עדות" allow="fullscreen" allowfullscreen loading="lazy"></iframe></div><p class="name" style="text-align:center;font-size:13px;color:var(--ink-soft);margin-top:9px;"><b style="color:var(--coral-deep);">שיר</b> · מטפלת רגשית</p></div>
-        <div class="video-testi"><div class="video-frame"><iframe src="https://player.vimeo.com/video/1149314008?dnt=1" title="עדות" allow="fullscreen" allowfullscreen loading="lazy"></iframe></div><p class="name" style="text-align:center;font-size:13px;color:var(--ink-soft);margin-top:9px;"><b style="color:var(--coral-deep);">רחל</b> · מטפלת NLP</p></div>
-        <div class="video-testi"><div class="video-frame"><iframe src="https://player.vimeo.com/video/1149313757?dnt=1" title="עדות" allow="fullscreen" allowfullscreen loading="lazy"></iframe></div><p class="name" style="text-align:center;font-size:13px;color:var(--ink-soft);margin-top:9px;"><b style="color:var(--coral-deep);">חנה</b> · קלינאית תקשורת</p></div>
-        <div class="video-testi"><div class="video-frame"><iframe src="https://player.vimeo.com/video/1208674882?dnt=1" title="עדות" allow="fullscreen" allowfullscreen loading="lazy"></iframe></div><p class="name" style="text-align:center;font-size:13px;color:var(--ink-soft);margin-top:9px;"><b style="color:var(--coral-deep);">איילה</b> · מרצה ומנחת סדנאות</p></div>
         <div class="video-testi"><div class="video-frame"><iframe src="https://player.vimeo.com/video/1208675105?dnt=1" title="עדות" allow="fullscreen" allowfullscreen loading="lazy"></iframe></div><p class="name" style="text-align:center;font-size:13px;color:var(--ink-soft);margin-top:9px;"><b style="color:var(--coral-deep);">חנה איידי</b> · מטפלת רגשית ודולה</p></div>
         <div class="video-testi"><div class="video-frame"><iframe src="https://player.vimeo.com/video/1208675961?dnt=1" title="עדות" allow="fullscreen" allowfullscreen loading="lazy"></iframe></div><p class="name" style="text-align:center;font-size:13px;color:var(--ink-soft);margin-top:9px;"><b style="color:var(--coral-deep);">מיכל</b> · מורה לשפע ומלווה להגשמה</p></div>
         <div class="video-testi"><div class="video-frame"><iframe src="https://player.vimeo.com/video/1208675321?dnt=1" title="עדות" allow="fullscreen" allowfullscreen loading="lazy"></iframe></div><p class="name" style="text-align:center;font-size:13px;color:var(--ink-soft);margin-top:9px;"><b style="color:var(--coral-deep);">פרידה</b> · מובילה נשים לזוגיות פורצת דרך</p></div>
@@ -1168,7 +1248,7 @@ section{counter-reset:sb;}
 <section class="reveal">
   <div class="container">
     <div class="auth">
-      <div class="auth-photo"><img src="assets/sarah-stage.jpg" alt="שרה שרבאני"></div>
+      <div class="auth-photo"><img src="assets/sarah-hero.jpg" alt="שרה שרבאני"></div>
       <div>
         <span class="eyebrow teal">מי מלמדת</span>
         <h2 class="h2">שרה שרבאני</h2>
@@ -1188,20 +1268,38 @@ section{counter-reset:sb;}
 
 <!-- ═══ 13. אודות שרה ═══ -->
 <section class="alt reveal">
-  <div class="container">
-    <div class="head center">
-      <span class="eyebrow teal">ואיך הגעתי לכאן בעצמי</span>
-      <h2 class="h2">הסיפור שמאחורי השיטה</h2>
+  <div class="narrow">
+    <div class="head">
+      <span class="eyebrow">הסיפור שלי</span>
+      <h2 class="h2">אבל רגע לפני, אני רוצה שתביני מאיפה אני הגעתי</h2>
     </div>
-    <div class="about">
-      <div class="about-photo"><img src="assets/sarah-today.jpg" alt="שרה שרבאני" loading="lazy"></div>
-      <div>
-        <p>לפני 12 שנים עברתי את משבר חיי, שהופיע בדמות דיכאון אחרי לידה. הייתי מדוכדכת באופן תמידי, לא מסופקת מחיי, לא מוגשמת בכלל, עם מינוס ענק בבנק ו-30 קילו יותר.</p>
-        <p>מתוך תהומות העצב והייאוש הצלחתי למצוא בתוכי קול פנימי שלחש לי שהחיים יכולים להיראות אחרת. לאט אבל בטוח, ובעזרת השם, מצאתי את הדרך לחיים טובים יותר.</p>
-        <p>בדרך עברתי משברים נוספים שמהם צמחתי: גילוי מחלה כרונית, וגילוי פוסט טראומה מורכבת שהתפרצה באמצע החיים. הדרך שבה צעדתי עוד קודם נתנה לי את הכוחות להגיע לריפוי ולמציאות החדשה שביקשתי לעצמי.</p>
-        <div class="quote"><em>אישה לא בונה עסק מתוך פחד. היא בונה אותו מתוך אהבה. אני לא מלמדת ייעוץ עסקי, אני מלמדת אותך להתאהב מחדש בעסק שלך, ומתוך זה להעביר את זה הלאה.</em></div>
-        <p>את השינוי שחוויתי אני מתפללת להעביר הלאה לכל אישה באשר היא. אני מאמינה שלכל אחת מאיתנו יש אפשרות לנהל עסק שופע ומצליח, מתוך חיבור עצמי וחיבור הכרחי לבורא.</p>
-      </div>
+    <p>התחלתי מאפס. זוג צעיר, שלושה ילדים קטנים. אני עובדת בעבודה שאני לא אוהבת, מנסה את מזלי בעסק שפתחתי ו"על הדרך" גם לומדת לתואר ראשון בו אני סובלת מכל רגע.</p>
+    <p>אני חולה, עייפה, שוקלת 30 קילו יותר. אני מתוסכלת וכל היום עצבנית!! מרגישה עמוק בתוכי שאין מצב ש"אלו החיים?!" מירוץ מטורף אחרי כסף ומינוסים בבנק, מריבות עם הבעל וצעקות על הילדים - באמת לשם כך ירדתי לעולם?!</p>
+    <p>התסכול נבע מפער גדול מאוד בין החלומות והרצונות שהיו בתוכי לבין המציאות בשטח. והפער הזה רק הלך וגדל... עד שקרסתי. היום אני מודה למתנה הכי גדולה שקיבלתי - דיכאון אחרי לידה.</p>
+    <div class="story-photo" style="max-width:190px;aspect-ratio:3/4;margin:30px auto 0;">
+      <img src="https://images.ravpages.co.il/xsite_resources/user_content/cp_new_production/00/54/e2/f5/0054e2f54c640fd0017d351bb30ad592/images/e133e8ac48be34ef07d359ac52c59831.jpg?rxc=1705555703" alt="שרה שרבאני, לפני השינוי" loading="lazy">
+    </div>
+    <p class="story-photo-caption">היי, זו אני עם 30 קילו יותר וחיוך שלא מגיע עד העיניים...</p>
+    <p style="margin-top:28px;">במקום הזה בו חיי התפרקו לרסיסים הבנתי שאני צריכה לבנות יסודות חדשים. יצאתי למסע חיי בו חקרתי, למדתי, העזתי, הבטתי לכאב העמוק בתוכי בעיניים, למדתי לאהוב את עצמי, להשלים עם מי שאני, לחבק את החלקים ה"פחות יפים" שלי - ופתאום, הפלא ופלא.</p>
+    <p style="font-weight:700;">מתוך כך החיים מתחילים להשתנות! מבפנים החוצה.</p>
+    <p>אני מצליחה לקום כל בוקר בחיוך. עזבתי את מקום העבודה שלי כשכירה, עזבתי את לימודי התואר, אני משקיעה בעצמי, מערכות היחסים בחיי משתפרות, הכסף זורם בשפע, אני בריאה למרות שיש לי מחלה כרונית -</p>
+    <p style="font-weight:700;">והכי חשוב - אני מגלה את עולם הטיפול והתודעה, מתאהבת בו, ומחברת אותו לעולם העסקים. וכך התחיל מסע חיי שנמשך עד לרגע זה.</p>
+    <p style="margin-top:22px;">היום אני עובדת פחות ומרוויחה הרבה יותר. אני קמה כל בוקר בהתלהבות, עוסקת במה שאני אוהבת, משווקת בכיף ויוצרת המון תוכן - ועוד המון דברים טובים שקרו בזכות השינוי שעשיתי.</p>
+    <p style="margin-top:22px;">במהלך השנים ליוויתי מאות בעלות עסקים. אצל כולן גיליתי משהו נסתר: <strong>העולם הפנימי של בעלת העסק הוא זה שעצר אותה מלהתקדם ולהצליח.</strong> לא השיווק, לא המכירות, לא עזרו יעוצים עסקיים בעשרות אלפי ש"ח. כל מה שהיא הייתה צריכה זו נקודת מבט עמוקה עליה, על העבר שלה, ועל האמונות שמנהלות אותה. מכאן הדרך להצלחה הייתה קצרה.</p>
+    <div class="quote-block">
+      <em>אם את מאמינה שהחיבור הזה הכרחי - בין העולם הפנימי של בעלת העסק לבין העסק שלה - ורוצה להיות חלק מתנועה נשית שמביאה גאולה לעולם: מקומך איתנו בהכשרה.</em>
+    </div>
+    <p class="video-caption" style="text-align:center;font-weight:700;">כך אני היום:</p>
+    <div class="photo-row">
+      <div class="story-photo"><img src="https://images.ravpages.co.il/xsite_resources/user_content/cp_new_production/00/54/e2/f5/0054e2f54c640fd0017d351bb30ad592/images/3710ba8aaeac1a5440b664b39d033031.jpg?rxc=1705555703" loading="lazy" alt="שרה שרבאני"></div>
+      <div class="story-photo"><img src="https://images.ravpages.co.il/xsite_resources/user_content/cp_new_production/00/54/e2/f5/0054e2f54c640fd0017d351bb30ad592/images/ba7435dc651f7c5e8ab727d0d3ee5b4f.jpg?rxc=1705555703" loading="lazy" alt="שרה שרבאני"></div>
+      <div class="story-photo"><img src="https://images.ravpages.co.il/xsite_resources/user_content/cp_new_production/00/54/e2/f5/0054e2f54c640fd0017d351bb30ad592/images/5326093868caa2281efc9a068fba80eb.jpg?rxc=1705555703" loading="lazy" alt="שרה שרבאני"></div>
+    </div>
+    <p style="text-align:center;color:var(--ink-soft);font-size:15px;margin-top:26px;">ומהדרך עם הנשים שאני מלווה:</p>
+    <div class="photo-row">
+      <div class="story-photo"><img src="assets/sarah-stage.jpg" alt="שרה שרבאני מעבירה מפגש בפני קבוצת נשים" loading="lazy"></div>
+      <div class="story-photo"><img src="assets/group-cards.jpg" alt="תרגול קבוצתי עם קלפים טיפוליים" loading="lazy"></div>
+      <div class="story-photo"><img src="assets/group-cheers.jpg" alt="שרה שרבאני עם נשות הקבוצה" loading="lazy"></div>
     </div>
   </div>
 </section>
