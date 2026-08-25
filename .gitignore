@@ -1,4 +1,9 @@
+# local editing copies - the browser edit mode injects ~1700 lines that must
+# never reach production. deploy files are exported clean via export_page.py.
 index.orig.html
+*.orig.html
+*-עריכה.html
+דף נחיתה*.html
 
 
 # secrets - never commit
