@@ -125,7 +125,6 @@ section.alt{background:var(--paper-alt);}
   font-family:'Heebo',system-ui,sans-serif;font-weight:700;
   font-size:clamp(16px,2vw,18.5px);line-height:1.55;letter-spacing:-.01em;
 }
-.hero-meta{margin-top:20px;font-size:14.5px;color:var(--ink-soft);}
 
 /* ── סרטונים ────────────────────────────────────────────────── */
 .video-frame{position:relative;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-md);background:#000;aspect-ratio:9/16;}
@@ -361,11 +360,9 @@ footer .fine{font-size:13px;color:var(--ink-soft);margin-top:18px;}
 .section-head{max-width:700px;margin:0 0 clamp(28px,4vw,44px);}
 .section-head.center{margin-inline:auto;text-align:center;}
 .pain-audience{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:34px 0;}
-.pain-audience{grid-template-columns:1fr;}
 .pain-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:26px;box-shadow:var(--shadow-sm);}
 .pain-card .tag{font-family:'Heebo',sans-serif;font-weight:700;font-size:13px;color:var(--teal);margin-bottom:10px;display:block;}
 .feedback-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:32px;max-width:520px;margin-inline:auto;}
-.feedback-grid{gap:10px;max-width:300px;}
 .feedback-item{border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow-sm);}
 .negation{display:flex;flex-direction:column;gap:6px;margin:26px 0;font-family:'Heebo',sans-serif;font-weight:700;font-size:clamp(16px,2.2vw,19px);}
 .negation span.no{color:var(--ink-soft);text-decoration:line-through;text-decoration-color:var(--coral);text-decoration-thickness:2px;font-weight:400;}
@@ -379,15 +376,11 @@ footer .fine{font-size:13px;color:var(--ink-soft);margin-top:18px;}
 .pill:nth-child(3n+3){border-color:rgba(247,169,74,.45);}
 .compare{display:flex;flex-direction:column;gap:16px;margin-top:30px;}
 .compare-row{display:grid;grid-template-columns:1fr auto 1.15fr;gap:16px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:14px 14px 14px 22px;box-shadow:var(--shadow-sm);}
-.compare-row{grid-template-columns:1fr;text-align:center;padding:20px;}
 .compare-no{color:var(--ink-soft);font-size:15.5px;text-decoration:line-through;text-decoration-color:rgba(117,104,107,.4);}
 .compare-yes{display:flex;align-items:center;justify-content:center;gap:8px;font-family:'Heebo',sans-serif;font-weight:800;color:#fff;background:linear-gradient(135deg,var(--coral) 0%,var(--coral-deep) 100%);border-radius:14px;padding:16px 20px;font-size:17px;line-height:1.35;box-shadow:0 8px 20px rgba(230,62,112,.28);}
 .compare-yes::before{content:"✓";flex:none;font-size:15px;width:22px;height:22px;border-radius:50%;background:rgba(255,255,255,.25);display:flex;align-items:center;justify-content:center;}
 .compare-arrow{color:var(--orange);font-size:22px;font-weight:700;}
-.compare-arrow{transform:rotate(-90deg);margin:0 auto;}
-.compare-yes{justify-content:center;}
 .io-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:34px;}
-.io-grid{grid-template-columns:1fr;}
 .io-card{background:#fff;border-radius:var(--radius-lg);padding:clamp(24px,4vw,34px);box-shadow:var(--shadow-sm);border-top:5px solid var(--teal);}
 .io-card.out{border-top-color:var(--coral);}
 .io-tag{font-family:'Heebo',sans-serif;font-weight:900;font-size:34px;color:var(--teal);line-height:1;}
@@ -398,7 +391,6 @@ footer .fine{font-size:13px;color:var(--ink-soft);margin-top:18px;}
 .io-card li::before{content:"✓";flex:none;color:var(--teal);font-weight:700;}
 .io-card.out li::before{color:var(--coral);}
 .check-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:30px;}
-.check-grid{grid-template-columns:1fr;}
 .check-card{display:flex;gap:14px;background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:20px 22px;box-shadow:var(--shadow-sm);}
 .check-card .ico{flex:none;width:38px;height:38px;border-radius:50%;background:var(--orange-tint);color:#9A5B0C;display:flex;align-items:center;justify-content:center;font-weight:800;}
 .who-list{display:flex;flex-direction:column;gap:14px;margin-top:28px;}
@@ -408,8 +400,6 @@ footer .fine{font-size:13px;color:var(--ink-soft);margin-top:18px;}
 .callout h3{color:#fff;margin-bottom:10px;}
 .callout p{color:rgba(255,255,255,.88);margin:0;}
 .axis-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:30px;}
-.axis-grid{grid-template-columns:1fr 1fr;}
-.axis-grid{grid-template-columns:1fr;}
 .axis-card{background:#fff;border-radius:var(--radius);padding:44px 20px 24px;box-shadow:var(--shadow-sm);border:1px solid var(--line);position:relative;}
 .axis-num{position:absolute;top:16px;right:18px;font-family:'Heebo',sans-serif;font-weight:900;font-size:30px;color:var(--coral);}
 .axis-card h4{font-family:'Heebo',sans-serif;font-weight:800;font-size:16.5px;margin:8px 0 8px;}
@@ -446,7 +436,6 @@ section{counter-reset:sb;}
 .photo-row{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:26px;}
 .photo-row.two{grid-template-columns:repeat(2,1fr);max-width:420px;margin-inline:auto;}
 .photo-row .story-photo{aspect-ratio:1/1;}
-.photo-row{grid-template-columns:repeat(3,1fr);gap:8px;}
 .quote-block{background:var(--coral-tint);border-radius:var(--radius);padding:26px 28px;margin:30px 0;position:relative;}
 .quote-block em{font-style:normal;font-weight:700;color:var(--coral-deep);font-family:'Heebo',sans-serif;font-size:clamp(16px,2vw,18px);line-height:1.5;}
 @media (max-width:520px){.photo-row{grid-template-columns:repeat(3,1fr);gap:8px;}}
@@ -535,7 +524,6 @@ section{counter-reset:sb;}
       את לא צריכה להיות אושיית רשת, ואת לא צריכה להפוך למישהי אחרת,
       כדי שיהיה לך עסק יציב.
     </p>
-    <p class="hero-meta">המחזור נפתח ב-12.10.2026 · קבלה בראיון אישי</p>
   </div>
 </header>
 
@@ -564,7 +552,6 @@ section{counter-reset:sb;}
         <p class="name"><b>רייזי</b> · מנחת סדנאות היומן הויזואלי</p>
       </div>
     </div>
-    <p style="text-align:center;margin-top:22px;"><a href="#more-testimonials" style="color:var(--coral-deep);font-weight:700;">ובהמשך הדף מחכות לך עוד עשרות עדויות</a></p>
   </div>
 </section>
 
@@ -590,6 +577,7 @@ section{counter-reset:sb;}
       <span class="eyebrow">ואם עד היום זה לא עבד ככה אצלך, יש לזה סיבה</span>
       <h2 class="h2">העולם העסקי הזה לא נבנה בשבילך</h2>
     </div>
+    <p style="font-family:'Heebo',sans-serif;font-weight:800;font-size:clamp(17px,2.2vw,20px);letter-spacing:-.014em;margin-bottom:18px;">לטפל את כבר יודעת. מה שחסר הוא השפה השנייה, זו שמדברת על לקוחות, מחירים ושיווק.<br>והשפה הזו, כפי שלימדו אותה עד היום, פשוט לא נבנתה בשבילך.</p>
     <p>כל מה שלמדת עד היום על "איך בונים עסק" נבנה בעולם קר וזכרי. עולם שמדבר על אסטרטגיה, יעדים, משפכי מכירות ו-KPI-ים. עולם שמסתכל על עסק כמו על מכונה שצריך לתפעל נכון.</p>
     <p style="font-weight:700;">אבל את לא מכונה. ועסק שאת בונה לא צריך "לתפקד", הוא צריך שתאהבי אותו.</p>
     <p>נשים לא בונות עסק מתוך פחד או מתוך טבלת אקסל. הן בונות מתוך חיבור. מתוך תשוקה. מתוך האנרגיה שזורמת כשעושים את מה שאוהבים באמת.</p>
@@ -725,7 +713,7 @@ section{counter-reset:sb;}
     <div class="obj-grid">
       <div class="obj">
         <h4 class="h4">"אני לא רוצה לעזוב את מה שאני עושה"</h4>
-        <p>ואת לא צריכה. זו לא זהות אחרת ולא התחלה מאפס, זו הרחבה של מה שכבר יש לך. הכלים הטיפוליים שלך נשארים בדיוק במקום, ומצטרף אליהם הצד העסקי.</p>
+        <p>ואת לא צריכה. זו לא זהות אחרת ולא התחלה מאפס, זו הרחבה של מה שכבר יש לך. הכלים הטיפוליים שלך נשארים בדיוק במקום, ומצטרף אליהם הצד הפרקטי: כלים טיפוליים נוספים שעובדים לצד כלים עסקיים, זה לצד זה.</p>
       </div>
       <div class="obj">
         <h4 class="h4">"אין לי תעודה בייעוץ עסקי"</h4>
@@ -737,7 +725,7 @@ section{counter-reset:sb;}
       </div>
       <div class="obj">
         <h4 class="h4">"אני מפחדת להישאר לבד אחרי הסיום"</h4>
-        <p>לא נשארת לבד. יש קבוצת ליווי לאורך כל הדרך, סטאז' מלווה עם משוב אישי, וקהילת בוגרות שממשיכה גם אחרי שההכשרה נגמרת.</p>
+        <p><strong>את לא נשארת לבד.</strong> יש קבוצת ליווי לאורך כל הדרך, סטאז' מלווה עם משוב אישי, וקהילת בוגרות שממשיכה גם אחרי שההכשרה נגמרת.</p>
       </div>
       <div class="obj">
         <h4 class="h4">"העסק שלי בעצמו תקוע כרגע"</h4>
@@ -1008,7 +996,6 @@ section{counter-reset:sb;}
           <li>תעברי תהליך אישי שיחזק את הביטחון, הנוכחות והיכולת שלך להוביל אחרות</li>
         </ul>
       </div>
->
       <div class="io-card out">
         <div class="io-tag">Out</div>
         <div class="io-sub">חלק שני</div>
@@ -1057,6 +1044,15 @@ section{counter-reset:sb;}
       <span class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M21 11.5a8.4 8.4 0 0 1-9.8 8.3c-1.3-.2-2-.3-2.6-.1L4 21l1.2-3.2c.2-.6 0-1.2-.2-1.7A8.5 8.5 0 1 1 21 11.5Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></span>
       <div><h4>תרגול וליווי בין המפגשים</h4><p>קבוצת ווטסאפ עם תרגילים, משימות ומדיטציות קצרות. לקראת הסיום - תקופת סטאז' מקצועית עם ליווי צמוד וקבלת משוב.</p></div>
     </div>
+    <div class="struct-block">
+      <div><h4>כנס זום לבוגרות</h4><p>במהלך ההכשרה תנחי סדנת זום בכנס הבוגרות. זו ההתנסות הראשונה שלך בהנחיה מול קבוצה, במרחב בטוח ועם ליווי.</p></div>
+    </div>
+    <div class="struct-block">
+      <div><h4>יום ריטריט</h4><p>יום שלם של עומק, ובתוכו תנחי מעגל נשים. לא הרצאה על איך מנחים, אלא הנחיה בפועל.</p></div>
+    </div>
+    <div class="struct-block">
+      <div><h4>תקופת סטאז'</h4><p>לקראת הסיום תלווי 3-4 מתאמנות אמיתיות בתשלום סמלי, עם סופרוויז'ן ומשוב אישי, עד שתרגישי בטוחה לצאת לבד.</p></div>
+    </div>
   </div>
 </section>
 
@@ -1099,6 +1095,10 @@ section{counter-reset:sb;}
         <p>שתי נשות מקצוע מהשורה הראשונה, כל אחת בתחום שלה, בתוך מסלול ההכשרה.</p>
       </div>
     </div>
+
+    <h3 class="h3" style="text-align:center;margin:38px 0 6px;">הרצאות מומחים שיתארחו בהכשרה</h3>
+
+    <p style="text-align:center;color:var(--ink-soft);font-size:15.5px;margin:0 0 18px;">שתי נשות מקצוע מהשורה הראשונה, כל אחת בתחום שלה, בתוך מסלול ההכשרה.</p>
 
     <div class="guest-grid">
       <div class="guest">
@@ -1198,7 +1198,9 @@ section{counter-reset:sb;}
       <p class="first">את פותחת את היומן בבוקר, ויש בו לקוחות.</p>
       <p>לא כי רדפת אחריהן, אלא כי את יודעת בדיוק מי הן, מה את נותנת להן, ואיך הן מגיעות אלייך.</p>
       <p>את יושבת מול אישה שמספרת לך על העסק שלה, ואת רואה מתחת למילים את מה שבאמת עוצר אותה. ואת גם יודעת מה עושים עם זה, לא רק רגשית אלא גם מעשית: מה היא מוכרת, במה מתמחרת, מה הצעד הבא שלה.</p>
+      <p>ובלילה, כשהבית נרגע, את לא שוכבת ער וחושבת מאיפה יגיע החודש הבא. את חושבת על הלקוחה שהתקשרה היום לספר שהיא סגרה את הלקוחה הראשונה שלה, ועל זה שבא לך לבכות מרוב גאווה.</p>
       <p>בסוף החודש את מסתכלת על המספרים ולא מתכווצת.</p>
+      <p>ואת זוכרת את עצמך לפני שנה, יושבת מול המחשב, בטוחה שכולן יודעות משהו שאת לא. היום את יודעת שלא היה חסר לך שום דבר. רק מישהי שתראה לך איך לחבר בין מה שכבר היה בך.</p>
       <p>ובכל זה, את לא הפכת למישהי אחרת. את אותה אישה שאוהבת לטפל, רק שעכשיו יש לה גם עסק שמחזיק את זה.</p>
     </div>
   </div>
@@ -1290,7 +1292,7 @@ section{counter-reset:sb;}
   <div class="narrow">
     <div class="head">
       <span class="eyebrow">הסיפור שלי</span>
-      <h2 class="h2">אבל רגע לפני, אני רוצה שתביני מאיפה אני הגעתי</h2>
+      <h2 class="h2">ולפני שנסיים, אני רוצה שתדעי מאיפה הגעתי</h2>
     </div>
     <p>התחלתי מאפס. זוג צעיר, שלושה ילדים קטנים. אני עובדת בעבודה שאני לא אוהבת, מנסה את מזלי בעסק שפתחתי ו"על הדרך" גם לומדת לתואר ראשון בו אני סובלת מכל רגע.</p>
     <p>אני חולה, עייפה, שוקלת 30 קילו יותר. אני מתוסכלת וכל היום עצבנית!! מרגישה עמוק בתוכי שאין מצב ש"אלו החיים?!" מירוץ מטורף אחרי כסף ומינוסים בבנק, מריבות עם הבעל וצעקות על הילדים - באמת לשם כך ירדתי לעולם?!</p>
