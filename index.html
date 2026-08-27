@@ -260,7 +260,6 @@ section.alt{background:var(--paper-alt);}
 }
 .mod-out b{font-family:'Heebo',system-ui,sans-serif;font-weight:800;}
 
-
 .mod-lessons li{flex-direction:column;gap:3px;align-items:stretch;}
 .mod-lessons li::before{display:none;}
 .mod-lessons li b{
@@ -273,8 +272,6 @@ section.alt{background:var(--paper-alt);}
 }
 .mod-lessons li span{font-size:15.2px;line-height:1.65;color:var(--ink-soft);padding-inline-start:16px;}
 .mod-lessons{gap:15px;}
-
-
 
 /* ── בונוסים ────────────────────────────────────────────────── */
 .bonus-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
@@ -454,7 +451,6 @@ section{counter-reset:sb;}
 .quote-block em{font-style:normal;font-weight:700;color:var(--coral-deep);font-family:'Heebo',sans-serif;font-size:clamp(16px,2vw,18px);line-height:1.5;}
 @media (max-width:520px){.photo-row{grid-template-columns:repeat(3,1fr);gap:8px;}}
 
-
 /* עדות בודדת משובצת בין הקטעים, כדי שההוכחה תלווה את כל הדף */
 .testi-spot{padding:clamp(32px,5vw,52px) 0;}
 .spot-lead{text-align:center;font-family:'Heebo',system-ui,sans-serif;font-weight:800;font-size:clamp(16px,2.1vw,19px);letter-spacing:-.012em;margin:0 auto 18px;max-width:520px;line-height:1.5;}
@@ -471,6 +467,19 @@ section{counter-reset:sb;}
    בלי זה, דף שהסקריפט שלו לא רץ מציג עמוד ריק.        */
 .js .reveal{opacity:0;transform:translateY(20px);transition:opacity var(--t-slow) var(--ease-out),transform var(--t-slow) var(--ease-out);}
 .js .reveal.in{opacity:1;transform:none;}
+
+/* הסרגל התחתון נכנס רק אחרי חצי גלילה, כדי שהקוראת תעבור מסע
+   לפני שמבקשים ממנה משהו. בלי JS הוא פשוט גלוי, כמו שאר הדף. */
+.js .bar{
+  transform:translateY(115%);opacity:0;pointer-events:none;
+  transition:transform .38s var(--ease-out),opacity .26s var(--ease-out);
+  will-change:transform;
+}
+.js .bar.in{transform:none;opacity:1;pointer-events:auto;}
+@media (prefers-reduced-motion:reduce){
+  .js .bar{transform:none;transition:opacity .2s ease;}
+  .js .bar.in{transform:none;}
+}
 
 /* ── העדפות נגישות ──────────────────────────────────────────── */
 @media (prefers-reduced-motion:reduce){
@@ -490,10 +499,10 @@ section{counter-reset:sb;}
   .nav,.bar{background:var(--paper);backdrop-filter:none;-webkit-backdrop-filter:none;}
   .btn-outline{border-width:2px;border-color:var(--ink);}
 }
+
 </style>
 </head>
 <body>
-
 
 <!-- ═══ 1. הוק פתיחה ═══ -->
 <header id="top" class="hero">
@@ -634,7 +643,6 @@ section{counter-reset:sb;}
     </ul>
   </div>
 </section>
-
 
 <!-- עדות משובצת -->
 <section class="alt reveal testi-spot">
@@ -1400,6 +1408,25 @@ section{counter-reset:sb;}
       if (el.getBoundingClientRect().top < window.innerHeight * 1.5) el.classList.add('in');
     });
   }, 3000);
+
+  /* הסרגל התחתון: מופיע אחרי חצי מהגלילה, נעלם מתחת ל-45%.
+     הפער בין שני הערכים מונע הבהוב כשעוצרים בדיוק על הגבול. */
+  var bar = document.querySelector('.bar');
+  if (bar) {
+    var shown = false, ticking = false;
+    function measure() {
+      ticking = false;
+      var max = document.documentElement.scrollHeight - window.innerHeight;
+      if (max <= 0) return;
+      var p = window.scrollY / max;
+      if (!shown && p > .5) { bar.classList.add('in'); shown = true; }
+      else if (shown && p < .45) { bar.classList.remove('in'); shown = false; }
+    }
+    window.addEventListener('scroll', function () {
+      if (!ticking) { ticking = true; requestAnimationFrame(measure); }
+    }, { passive: true });
+    measure();
+  }
 
   /* גלילת הקרוסלה: מגיבה מיד, וזזה במנה אחת של כרטיס */
   document.querySelectorAll('.scroll-wrap').forEach(function (wrap) {
