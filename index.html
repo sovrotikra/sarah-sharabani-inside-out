@@ -461,6 +461,17 @@ section{counter-reset:sb;}
 .spot-credit{text-align:center;font-size:13.5px;color:var(--ink-soft);margin:14px 0 0;}
 .spot-credit b{color:var(--coral-deep);font-family:'Heebo',system-ui,sans-serif;}
 
+/* וואטסאפ בסרגל: משני ומצומצם, כדי שלא יתחרה בהנעה הראשית */
+.bar .bar-main{flex:1 1 auto;white-space:nowrap;}
+.bar .btn-wa{
+  flex:0 0 auto;background:#25D366;color:#fff;
+  padding:13px 18px;font-size:15px;gap:7px;
+  box-shadow:0 6px 18px rgba(37,211,102,.28);
+}
+.btn-wa:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(37,211,102,.38);}
+.btn-wa:active{transform:scale(.96);}
+@media (max-width:344px){.bar .btn-wa span{display:none;}.bar .btn-wa{padding:13px 14px;}}
+
 /* ── חשיפה הדרגתית ───────────────────────────────────────────
    הכלל: התוכן גלוי כברירת מחדל. רק אם הסקריפט רץ בהצלחה
    הוא מוסיף .js ל-html, ורק אז מותר להסתיר משהו.
@@ -1381,7 +1392,10 @@ section{counter-reset:sb;}
 
 <div class="bar">
   <div class="bar-inner">
-    <a class="btn btn-primary" href="#apply">אני רוצה לבדוק התאמה</a>
+    <a class="btn btn-primary bar-main" href="#apply">אני רוצה לבדוק התאמה</a>
+    <a class="btn btn-wa" href="https://wa.me/message/7DOKCXRTBY4UG1" target="_blank" rel="noopener" aria-label="לשאלה בוואטסאפ">
+      <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.47 14.38c-.28-.14-1.65-.81-1.9-.9-.26-.1-.44-.14-.63.14-.19.28-.72.9-.89 1.08-.16.19-.33.21-.61.07-.28-.14-1.18-.44-2.24-1.39-.83-.74-1.39-1.66-1.55-1.94-.16-.28-.02-.43.12-.57.13-.13.28-.33.42-.5.14-.16.19-.28.28-.47.09-.19.05-.35-.02-.5-.07-.14-.63-1.53-.87-2.09-.23-.55-.46-.48-.63-.48-.16-.01-.35-.01-.54-.01-.19 0-.5.07-.76.35-.26.28-1 1-1 2.42 0 1.43 1.03 2.82 1.18 3.01.14.19 2.03 3.1 4.92 4.35.69.3 1.22.48 1.64.61.69.22 1.31.19 1.81.11.55-.08 1.65-.67 1.89-1.33.23-.65.23-1.2.16-1.33-.07-.12-.26-.19-.54-.33ZM12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.7.44 3.35 1.29 4.81L2 22l5.44-1.36a9.9 9.9 0 0 0 4.6 1.17h.01c5.46 0 9.9-4.45 9.9-9.91C21.95 6.45 17.5 2 12.04 2Z"/></svg><span>וואטסאפ</span>
+    </a>
   </div>
 </div>
 
