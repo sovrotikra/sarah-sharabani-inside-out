@@ -461,6 +461,25 @@ section{counter-reset:sb;}
 .btn-wa:active{transform:scale(.96);}
 @media (max-width:344px){.bar .btn-wa span{display:none;}.bar .btn-wa{padding:13px 14px;}}
 
+/* גלריית ההודעות הכתובות. עמודות במקום גריד, כי הצילומים
+   בפרופורציות שונות מאוד ומסגרת אחידה הייתה חותכת אותם רע. */
+.wt-grid{columns:3;column-gap:16px;margin-top:8px;}
+@media (max-width:900px){.wt-grid{columns:2;}}
+@media (max-width:600px){.wt-grid{columns:1;max-width:360px;margin-inline:auto;}}
+.wt-item{
+  display:block;break-inside:avoid;margin-bottom:16px;position:relative;
+  border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);
+  background:#fff;box-shadow:var(--shadow-sm);max-height:780px;
+  transition:transform var(--t-base) var(--ease-out),box-shadow var(--t-base) var(--ease-out);
+}
+.wt-item:hover{transform:translateY(-3px);box-shadow:var(--shadow-md);}
+.wt-item:active{transform:scale(.985);}
+.wt-item img{width:100%;height:auto;display:block;}
+.wt-item::after{
+  content:"";position:absolute;inset-inline:0;bottom:0;height:110px;
+  background:linear-gradient(to bottom,rgba(255,255,255,0) 0%,#fff 82%);pointer-events:none;
+}
+
 /* ── חשיפה הדרגתית ───────────────────────────────────────────
    הכלל: התוכן גלוי כברירת מחדל. רק אם הסקריפט רץ בהצלחה
    הוא מוסיף .js ל-html, ורק אז מותר להסתיר משהו.
@@ -1237,8 +1256,45 @@ section{counter-reset:sb;}
   </div>
 </section>
 
-<!-- ═══ 12. פרטים פרקטיים ═══ -->
+<!-- ═══ עדויות כתובות ═══ -->
 <section class="alt reveal">
+  <div class="container">
+    <div class="head center">
+      <span class="eyebrow">ומה שנשים כתבו לי אחרי</span>
+      <h2 class="h2">ההודעות עצמן, כלשונן</h2>
+      <p class="lead">המשפטים המסומנים הם מה שהן בחרו לספר. ללחיצה על הודעה היא נפתחת במלואה.</p>
+    </div>
+    <div class="wt-grid">
+      <a class="wt-item" href="assets/testimonial-3.jpg" target="_blank" rel="noopener">
+        <img src="assets/testimonial-3.jpg" loading="lazy" alt="הודעה של משתתפת">
+      </a>
+      <a class="wt-item" href="assets/testimonial-4.jpg" target="_blank" rel="noopener">
+        <img src="assets/testimonial-4.jpg" loading="lazy" alt="הודעה של משתתפת">
+      </a>
+      <a class="wt-item" href="assets/testimonial-5.jpg" target="_blank" rel="noopener">
+        <img src="assets/testimonial-5.jpg" loading="lazy" alt="הודעה של משתתפת">
+      </a>
+      <a class="wt-item" href="assets/testimonial-6.jpg" target="_blank" rel="noopener">
+        <img src="assets/testimonial-6.jpg" loading="lazy" alt="הודעה של משתתפת">
+      </a>
+      <a class="wt-item" href="assets/testimonial-7.jpg" target="_blank" rel="noopener">
+        <img src="assets/testimonial-7.jpg" loading="lazy" alt="הודעה של משתתפת">
+      </a>
+      <a class="wt-item" href="assets/testimonial-8.jpg" target="_blank" rel="noopener">
+        <img src="assets/testimonial-8.jpg" loading="lazy" alt="הודעה של משתתפת">
+      </a>
+      <a class="wt-item" href="assets/testimonial-9.jpg" target="_blank" rel="noopener">
+        <img src="assets/testimonial-9.jpg" loading="lazy" alt="הודעה של משתתפת">
+      </a>
+      <a class="wt-item" href="assets/testimonial-10.jpg" target="_blank" rel="noopener">
+        <img src="assets/testimonial-10.jpg" loading="lazy" alt="הודעה של משתתפת">
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 12. פרטים פרקטיים ═══ -->
+<section class="reveal">
   <div class="narrow">
     <div class="head center">
       <span class="eyebrow orange">פרטים פרקטיים</span>
@@ -1266,7 +1322,7 @@ section{counter-reset:sb;}
 </section>
 
 <!-- ═══ מי מלמדת ═══ -->
-<section class="reveal">
+<section class="alt reveal">
   <div class="container">
     <div class="auth">
       <div class="auth-photo"><img src="assets/sarah-hero.jpg" alt="שרה שרבאני"></div>
@@ -1288,7 +1344,7 @@ section{counter-reset:sb;}
 </section>
 
 <!-- ═══ 13. אודות שרה ═══ -->
-<section class="alt reveal">
+<section class="reveal">
   <div class="narrow">
     <div class="head">
       <span class="eyebrow">הסיפור שלי</span>
@@ -1326,7 +1382,7 @@ section{counter-reset:sb;}
 </section>
 
 <!-- ═══ 14. CTA שני ═══ -->
-<section class="reveal">
+<section class="alt reveal">
   <div class="narrow">
     <div class="cta">
       <h2 class="h2">אם הגעת עד לכאן, כנראה שמשהו בפנים כבר יודע</h2>
@@ -1343,7 +1399,7 @@ section{counter-reset:sb;}
 </section>
 
 <!-- ═══ 15. שאלות נפוצות ═══ -->
-<section class="alt reveal">
+<section class="reveal">
   <div class="narrow">
     <div class="head center">
       <span class="eyebrow">שאלות נפוצות</span>
