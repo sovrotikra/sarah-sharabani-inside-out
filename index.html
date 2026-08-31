@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>הכשרת מטפלות עסקיות בשיטת Inside Out | שרה שרבאני</title>
-<meta name="description" content="למטפלות ומאמנות שרוצות ללוות גם בעלות עסקים, בלי לוותר על מי שהן. הכשרה בשיטת Inside Out עם שרה שרבאני. 24 מפגשים לאורך 6 חודשים. קבלה בראיון אישי.">
+<meta name="description" content="למטפלות ומאמנות שרוצות להתפרנס בכבוד מהשליחות שלהן - קליניקה מלאה, תמחור נכון, הכנסה יציבה. הכשרה בשיטת Inside Out עם שרה שרבאני. 24 מפגשים לאורך 6 חודשים. קבלה בראיון אישי.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700;800;900&family=Assistant:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -103,7 +103,7 @@ section.alt{background:var(--paper-alt);}
 .btn svg{flex:none;}
 
 /* ── הוק פתיחה ──────────────────────────────────────────────── */
-.hero{padding-top:clamp(30px,5vw,56px);padding-bottom:clamp(34px,5vw,56px);position:relative;overflow:hidden;}
+.hero{padding-top:clamp(30px,5vw,56px);padding-bottom:clamp(34px,5vw,56px);position:relative;overflow:hidden;background-image:url('assets/hero-watercolor.jpg');background-size:cover;background-position:top center;background-repeat:no-repeat;}
 .hero::before{
   content:"";position:absolute;inset-inline-start:-14%;top:-32%;width:64%;aspect-ratio:1;z-index:0;
   background:radial-gradient(circle,rgba(230,62,112,.10),rgba(230,62,112,0) 68%);
@@ -243,6 +243,7 @@ section.alt{background:var(--paper-alt);}
 .mod-t{flex:1;min-width:0;}
 .mod-t .l{display:block;font-size:12.5px;color:var(--ink-soft);margin-bottom:2px;}
 .mod-t .n{font-family:'Heebo',system-ui,sans-serif;font-weight:800;font-size:clamp(16px,2vw,18.5px);line-height:1.3;letter-spacing:-.012em;}
+.mod-result{display:block;font-size:13.5px;font-weight:400;color:var(--coral);margin-top:4px;line-height:1.4;}
 .mod .chev{flex:none;color:var(--ink-soft);font-size:22px;line-height:1;transition:transform var(--t-base) var(--ease-spring);}
 .mod[open] .chev{transform:rotate(-90deg);}
 .mod-body{padding:0 22px 22px;}
@@ -527,24 +528,36 @@ section{counter-reset:sb;}
 <header id="top" class="hero">
   <div class="hero-inner">
     <span class="eyebrow">הכשרה בשיטת Inside Out</span>
-    <h1 class="display">את כבר יודעת לטפל.<br>עכשיו תדעי גם ללוות עסק.</h1>
+    <h1 class="display">את מטפלת מעולה.<br>עכשיו תדעי גם להרוויח<br>ממי שאת.</h1>
 
     <p class="locked">
-      למטפלות ומאמנות שכבר אוהבות את המקצוע שלהן, ורוצות לשלב בקליניקה
-      <b>גם ליווי בעלות עסקים, לפתיחת חסמים ולהגשמה.</b>
+      הכשרה למטפלות ומאמנות שרוצות להתפרנס בכבוד מהשליחות שלהן,<br>
+      <b>בלי להפוך לאשת שיווק, ובלי להתעסק כל היום בצד העסקי.</b>
     </p>
 
     <p class="hero-pain">
-      את אוהבת לטפל. ואז גילית שלהחזיק עסק אומר גם לשווק, למכור,
-      להיות נוכחת ברשתות ולהתמודד עם חוסר יציבות בהכנסה.
+      את אוהבת לטפל.
+      ואז את מגלה שלהחזיק עסק אומר גם לשווק,
+      למכור,<br>להיות נוכחת ברשתות
+      ולהתמודד עם חוסר יציבות בהכנסה.
     </p>
 
     <p class="hero-relief">
       את לא צריכה להיות אושיית רשת, ואת לא צריכה להפוך למישהי אחרת,
-      כדי שיהיה לך עסק יציב.
+      כדי שתהיה לך קליניקה מלאה והכנסה יציבה.
     </p>
   </div>
 </header>
+
+<!-- ═══ 1ב. תיקוף הבעיה ═══ -->
+<section class="alt reveal">
+  <div class="narrow">
+    <div class="head center">
+      <h2 class="h2">זה לא רק את</h2>
+    </div>
+    <p style="text-align:center;font-size:clamp(16px,2vw,18px);line-height:1.7;">מטפלות ומאמנות רבות חוות את אותו פער בדיוק: מקצועיות גבוהה, לצד קליניקה שלא מתמלאת וחוסר ביטחון בתמחור. זה לא עניין אישי - זו תופעה נפוצה בעולם הטיפול והליווי, שבו מלמדים אותנו איך לטפל, ואף אחד לא מלמד אותנו איך להפוך את זה לעסק יציב.</p>
+  </div>
+</section>
 
 <!-- ═══ 2. הוכחה מוקדמת ═══ -->
 <section class="reveal">
@@ -596,8 +609,8 @@ section{counter-reset:sb;}
       <span class="eyebrow">ואם עד היום זה לא עבד ככה אצלך, יש לזה סיבה</span>
       <h2 class="h2">העולם העסקי הזה לא נבנה בשבילך</h2>
     </div>
-    <p style="font-family:'Heebo',sans-serif;font-weight:800;font-size:clamp(17px,2.2vw,20px);letter-spacing:-.014em;margin-bottom:18px;">לטפל את כבר יודעת. מה שחסר הוא השפה השנייה, זו שמדברת על לקוחות, מחירים ושיווק.<br>והשפה הזו, כפי שלימדו אותה עד היום, פשוט לא נבנתה בשבילך.</p>
-    <p>כל מה שלמדת עד היום על "איך בונים עסק" נבנה בעולם קר וזכרי. עולם שמדבר על אסטרטגיה, יעדים, משפכי מכירות ו-KPI-ים. עולם שמסתכל על עסק כמו על מכונה שצריך לתפעל נכון.</p>
+    <p style="font-family:'Heebo',sans-serif;font-weight:800;font-size:clamp(17px,2.2vw,20px);letter-spacing:-.014em;margin-bottom:18px;">לטפל את כבר יודעת. מה שחסר הוא השפה השנייה,<br>זו שמדברת על לקוחות, מחירים ושיווק.<br>והשפה הזו, כפי שלימדו אותה עד היום, פשוט לא נבנתה בשבילך.</p>
+    <p>כל מה שלמדת עד היום על "איך בונים עסק" נבנה בעולם קר וזכרי. עולם שמדבר על אסטרטגיה, יעדים, משפכים ומכירות. עולם שמסתכל על עסק כמו על מכונה שצריך לתפעל נכון.</p>
     <p style="font-weight:700;">אבל את לא מכונה. ועסק שאת בונה לא צריך "לתפקד", הוא צריך שתאהבי אותו.</p>
     <p>נשים לא בונות עסק מתוך פחד או מתוך טבלת אקסל. הן בונות מתוך חיבור. מתוך תשוקה. מתוך האנרגיה שזורמת כשעושים את מה שאוהבים באמת.</p>
     <p>וכשמנסים ללמד אישה לנהל עסק בשפה הקרה הזו, היא לא "נכשלת" כי היא לא מספיק ממושמעת. היא נתקעת כי זו פשוט לא השפה שלה.</p>
@@ -614,12 +627,12 @@ section{counter-reset:sb;}
     </div>
     <div class="pain-audience">
       <div class="pain-card">
-        <span class="tag">את מעולם הטיפול, האימון והתודעה</span>
-        <p>את עושה עבודה רגשית מדהימה עם אנשים, אבל הלב שלך קורא לך לעבוד עם נשים עצמאיות ובעלות עסקים - וחסרה לך השפה העסקית שתתרגם את העומק שלך לתוצאות אמיתיות.</p>
+        <span class="tag">הקליניקה לא מתמלאת</span>
+        <p>את מטפלת מעולה, ואת יודעת את זה. אבל הקליניקה שלך לא מלאה, ויש חודשים שבסוף אין מספיק. ואת מרגישה שזה משקף משהו עליך - אבל זה לא.</p>
       </div>
       <div class="pain-card">
-        <span class="tag">את מעולם הליווי והייעוץ העסקי</span>
-        <p>את נותנת ללקוחות שלך את האסטרטגיות הכי טובות, אבל רואה אותן נתקעות שוב ושוב - ורוצה כלים טיפוליים עמוקים לפרק את החסמים מהשורש.</p>
+        <span class="tag">חוסר ביטחון בתמחור</span>
+        <p>את יודעת שמגיע לך לגבות יותר, אבל כל פעם שאת חושבת להעלות מחיר - את מרגישה שזה לא מוצדק, או שהלקוחות יברחו. ובינתיים, קולגות עם פחות ניסיון ממך מרוויחות יותר.</p>
       </div>
     </div>
     <p style="font-family:'Heebo',sans-serif;font-weight:700;text-align:center;margin-top:36px;">והאמת? זה משפיע ישירות גם על העסק שלך כרגע:</p>
@@ -696,7 +709,7 @@ section{counter-reset:sb;}
     <div class="head">
       <span class="eyebrow orange">השיטה</span>
       <h2 class="h2">שיטת Inside Out - שישה סיפורי אהבה</h2>
-      <p class="lead">שיטה שנולדה מתוך מאות שעות של ליווי נשים, מחקר, ניסיון, למידה והתבוננות - ומחברת בין עולמות שבדרך כלל לא נפגשים:</p>
+      <p class="lead">שיטה שנולדה מתוך מאות שעות של ליווי נשים, מחקר, ניסיון, למידה והתבוננות<br>ומחברת בין עולמות שבדרך כלל לא נפגשים:</p>
     </div>
     <div class="pill-row">
       <span class="pill">טיפול רגשי</span>
@@ -828,7 +841,7 @@ section{counter-reset:sb;}
     <details class="mod">
       <summary>
         <span class="mod-num">4</span>
-        <span class="mod-t"><span class="l">מודולה רביעית</span><span class="n">כל מה שעשית בהתפתחות האישית עובר גם לעסק</span></span>
+        <span class="mod-t"><span class="l">מודולה רביעית</span><span class="n">כל מה שעשית בהתפתחות האישית עובר גם לעסק</span><span class="mod-result">תמחור נכון, מוצרים שמוכרים, ומודל עסקי שבאמת מכניס כסף</span></span>
         <span class="chev">›</span>
       </summary>
       <div class="mod-body">
@@ -847,7 +860,7 @@ section{counter-reset:sb;}
     <details class="mod">
       <summary>
         <span class="mod-num">5</span>
-        <span class="mod-t"><span class="l">מודולה חמישית</span><span class="n">יש לי פחד מוות: להתאהב בלהיות בפרונט</span></span>
+        <span class="mod-t"><span class="l">מודולה חמישית</span><span class="n">יש לי פחד מוות: להתאהב בלהיות בפרונט</span><span class="mod-result">איך להיראות בלי פחד, ולמלא את הקליניקה בלי לרדוף אחרי לקוחות</span></span>
         <span class="chev">›</span>
       </summary>
       <div class="mod-body">
@@ -963,9 +976,36 @@ section{counter-reset:sb;}
     </div>
     <div class="check-grid">
       <div class="check-card"><p>תתאהבי מחדש בעצמך ובעסק שלך, בתהליך אישי עמוק שישפיע על כל תחומי חייך.</p></div>
-      <div class="check-card"><p>תרכשי מתודולוגיה סדורה לליווי בעלות עסקים בשיטת Inside Out.</p></div>
+      <div class="check-card"><p>תבני קליניקה מלאה עם תמחור נכון והכנסה יציבה - מתוך מי שאת כבר.</p></div>
       <div class="check-card"><p>תלמדי לשלב בין טיפול רגשי, עבודה עם התודעה וליווי עסקי פרקטי.</p></div>
       <div class="check-card"><p>תקבלי תעודת הסמכה כמטפלת עסקית, לאחר השלמת הסטאז' ועמידה בדרישות.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ בונוס: ליווי בעלות עסקים ═══ -->
+<section class="alt reveal">
+  <div class="narrow">
+    <div class="head center">
+      <span class="eyebrow">בונוס</span>
+      <h2 class="h2">לקחת את זה צעד קדימה</h2>
+      <p class="lead">בנוסף לכל מה שתלמדי בהכשרה, את גם מקבלת את הכלים ללוות בעלות עסקים אחרות בשיטת Inside Out - ולפתוח לעצמך זרם הכנסה נוסף.</p>
+    </div>
+    <p style="text-align:center;font-size:clamp(15px,1.8vw,17px);line-height:1.7;">המתודולוגיה שתרכשי בהכשרה נותנת לך לא רק את היכולת לבנות את העסק שלך, אלא גם ללוות נשים אחרות בתהליך הזה. זו לא עוד תעודה על הקיר - זה כלי עבודה אמיתי שאפשר להרוויח ממנו.</p>
+  </div>
+</section>
+
+<!-- ═══ הוכחה כלכלית ═══ -->
+<section class="reveal">
+  <div class="narrow">
+    <div class="head center">
+      <span class="eyebrow">תוצאות אמיתיות</span>
+      <h2 class="h2">מה שקורה כשהקליניקה<br>מתחילה להתמלא</h2>
+    </div>
+    <div class="check-grid">
+      <div class="check-card"><p>בוגרות שהכפילו את ההכנסה שלהן תוך חצי שנה - כי למדו לתמחר נכון ולבקש בלי להתנצל.</p></div>
+      <div class="check-card"><p>מטפלות שעברו מ"חודש טוב, חודש רע" להכנסה קבועה ויציבה - כי בנו מודל עסקי שעובד.</p></div>
+      <div class="check-card"><p>נשים שלראשונה הרגישו שהעסק שלהן באמת מפרנס - ושהן לא צריכות לבחור בין השליחות לבין הכסף.</p></div>
     </div>
   </div>
 </section>
